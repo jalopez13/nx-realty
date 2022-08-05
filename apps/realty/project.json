@@ -14,7 +14,9 @@
         "outputPath": "dist/apps/realty"
       },
       "configurations": {
-        "development": {},
+        "development": {
+          "outputPath": "tmp/apps/realty"
+        },
         "production": {}
       }
     },
