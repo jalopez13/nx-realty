@@ -18,8 +18,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-realty/shared/components": [
-        "libs/shared/components/src/index.ts"
+      "@nx-realty/shared-ui": [
+        "libs/shared-ui/src/index.ts"
       ]
     }
   },

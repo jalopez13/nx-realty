@@ -1,0 +1,73 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/realtymyway",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/realtymyway",
+        "outputPath": "dist/apps/realtymyway",
+        "postcssConfig": "apps/realtymyway/postcss.config.js"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "apps/realtymyway"
+        },
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "realtymyway:build",
+        "dev": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "realtymyway:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "realtymyway:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "realtymyway:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/realtymyway"
+      ],
+      "options": {
+        "jestConfig": "apps/realtymyway/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/realtymyway/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    }
+  },
+  "tags": [
+    "scope:app"
+  ]
+}
