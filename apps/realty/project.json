@@ -15,7 +15,7 @@
       },
       "configurations": {
         "development": {
-          "outputPath": "tmp/apps/realty"
+          "outputPath": "apps/realty"
         },
         "production": {}
       }
