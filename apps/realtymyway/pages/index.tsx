@@ -1,13 +1,18 @@
+import Image from 'next/image';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface HomePageProps {};
+/* eslint-disable-next-line */
+// export interface HomePageProps {
+// }
 
-const HomePage = (props: HomePageProps) => {
+export const HomePage = (props) => {
   return (
     <div>
-      <div className="bg-indigo-500 p-2 font-mono">HomePage - Vato Loco!</div>;
+      <h1>HomePage</h1>
+      <Image src="/next.js.svg" width={64} height={64} alt="" />
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+
+export default HomePage;
+

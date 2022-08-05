@@ -4,6 +4,7 @@
   "projects": {
     "realtymyway": "apps/realtymyway",
     "realtymyway-e2e": "apps/realtymyway-e2e",
-    "shared-ui": "libs/shared-ui"
+    "shared-ui": "libs/shared-ui",
+    "shared-ui-e2e": "apps/shared-ui-e2e"
   }
 }

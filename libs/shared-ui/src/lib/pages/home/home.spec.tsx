@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import Button from '.';
+import HomePage from '.';
 
-describe('Button', () => {
+describe('TopicButton', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(< Button />);
+    const { baseElement } = render(< HomePage  />);
     expect(baseElement).toBeTruthy();
   });
 });

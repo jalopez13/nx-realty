@@ -1,17 +1,13 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const withNx = require('@nrwl/next/plugins/with-nx');
+const NextConfigBase = require('../../next.config.base');
 
-
-/**
- * @type {import('@nrwl/next/plugins/with-nx').WithNxOptions}
- **/
 const nextConfig = {
-  nx: {
-    // Set this to true if you would like to to use SVGR
-    // See: https://github.com/gregberge/svgr
-    svgr: false,
-  },
+  ...NextConfigBase,
+  
+  // Add custom configuration below.
+  images: {
+    domains: ["m.media-amazon.com"]
+  }
 };
 
-module.exports = withNx(nextConfig);
+module.exports = nextConfig
 
