@@ -6,13 +6,13 @@ function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Welcome to realtymyway!</title>
+        <title>Welcome to realty-my-way!</title>
       </Head>
       <main className="app">
-        <Component {...pageProps}/>
+        <Component {...pageProps} />
       </main>
     </>
   );
-};
+}
 
 export default CustomApp;

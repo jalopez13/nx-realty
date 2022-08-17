@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/realtymyway",
+  "sourceRoot": "apps/realty-my-way",
   "projectType": "application",
   "targets": {
     "build": {
@@ -10,13 +10,12 @@
       ],
       "defaultConfiguration": "production",
       "options": {
-        "root": "apps/realtymyway",
-        "outputPath": "dist/apps/realtymyway",
-        "postcssConfig": "apps/realtymyway/postcss.config.js"
+        "root": "apps/realty-my-way",
+        "outputPath": "dist/apps/realty-my-way"
       },
       "configurations": {
         "development": {
-          "outputPath": "apps/realtymyway"
+          "outputPath": "apps/realty-my-way"
         },
         "production": {}
       }
@@ -25,16 +24,16 @@
       "executor": "@nrwl/next:server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "realtymyway:build",
+        "buildTarget": "realty-my-way:build",
         "dev": true
       },
       "configurations": {
         "development": {
-          "buildTarget": "realtymyway:build:development",
+          "buildTarget": "realty-my-way:build:development",
           "dev": true
         },
         "production": {
-          "buildTarget": "realtymyway:build:production",
+          "buildTarget": "realty-my-way:build:production",
           "dev": false
         }
       }
@@ -42,16 +41,16 @@
     "export": {
       "executor": "@nrwl/next:export",
       "options": {
-        "buildTarget": "realtymyway:build:production"
+        "buildTarget": "realty-my-way:build:production"
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": [
-        "coverage/apps/realtymyway"
+        "coverage/apps/realty-my-way"
       ],
       "options": {
-        "jestConfig": "apps/realtymyway/jest.config.ts",
+        "jestConfig": "apps/realty-my-way/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -62,12 +61,10 @@
       ],
       "options": {
         "lintFilePatterns": [
-          "apps/realtymyway/**/*.{ts,tsx,js,jsx}"
+          "apps/realty-my-way/**/*.{ts,tsx,js,jsx}"
         ]
       }
     }
   },
-  "tags": [
-    "scope:app"
-  ]
+  "tags": []
 }

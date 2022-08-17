@@ -19,7 +19,7 @@
       "rules": {
         "@next/next/no-html-link-for-pages": [
           "error",
-          "apps/realtymyway/pages"
+          "apps/realty-my-way/pages"
         ]
       }
     },

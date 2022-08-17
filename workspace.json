@@ -2,8 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "realtymyway": "apps/realtymyway",
-    "realtymyway-e2e": "apps/realtymyway-e2e",
+    "realty-my-way": "apps/realty-my-way",
     "shared-ui": "libs/shared-ui",
     "shared-ui-e2e": "apps/shared-ui-e2e"
   }
