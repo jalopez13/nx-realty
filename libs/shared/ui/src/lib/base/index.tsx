@@ -5,7 +5,7 @@ export interface IBaseComponent {
 export const BaseComponent = ({ title = 'Base Component' }: IBaseComponent) => {
   return (
     <div>
-      <h1>Base Component</h1>
+      <h1>{title}</h1>
     </div>
   );
 };
