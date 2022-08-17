@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
+    "start": "cross-env NODE_OPTIONS='--inspect' nx serve",
     "build": "nx build",
     "test": "nx test",
     "prepare": "husky install"
@@ -54,6 +54,7 @@
     "autoprefixer": "^10.4.8",
     "babel-jest": "27.5.1",
     "babel-loader": "8.1.0",
+    "cross-env": "^7.0.3",
     "cypress": "^9.1.0",
     "eslint": "~8.15.0",
     "eslint-config-next": "12.2.3",

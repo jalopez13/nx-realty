@@ -8,6 +8,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Welcome to realty-my-way!</title>
       </Head>
+
       <main className="app">
         <Component {...pageProps} />
       </main>
