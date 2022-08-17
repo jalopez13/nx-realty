@@ -1,3 +1,4 @@
+// apps/comicbook/postcss.config.js
 const { join } = require('path');
 
 module.exports = {
@@ -6,5 +7,6 @@ module.exports = {
       config: join(__dirname, 'tailwind.config.js'),
     },
     autoprefixer: {},
+    'tailwindcss/nesting': {},
   },
 };
