@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "realty-my-way": "apps/realty-my-way",
+    "shared-assets": "libs/shared/assets",
     "shared-ui": "libs/shared/ui"
   }
 }

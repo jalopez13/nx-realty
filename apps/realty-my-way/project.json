@@ -11,7 +11,19 @@
       "defaultConfiguration": "production",
       "options": {
         "root": "apps/realty-my-way",
-        "outputPath": "dist/apps/realty-my-way"
+        "outputPath": "dist/apps/realty-my-way",
+        "assets": [
+          {
+            "input": "libs/shared/assets/src",
+            "glob": "**/*.jpg",
+            "output": "assets"
+          },
+          {
+            "input": "libs/shared/assets/src/svgs",
+            "glob": "**/*.svg",
+            "output": "assets/svgs"
+          }
+        ]
       },
       "configurations": {
         "development": {
@@ -25,7 +37,19 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "realty-my-way:build",
-        "dev": true
+        "dev": true,
+        "assets": [
+          {
+            "input": "libs/shared/assets/src",
+            "glob": "**/*.jpg",
+            "output": "assets"
+          },
+          {
+            "input": "libs/shared/assets/src/svgs",
+            "glob": "**/*.svg",
+            "output": "assets/svgs"
+          }
+        ]
       },
       "configurations": {
         "development": {

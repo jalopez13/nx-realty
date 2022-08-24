@@ -37,5 +37,8 @@
     "Vercel",
     "Viewports",
     "WEBP"
-  ]
+  ],
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  }
 }

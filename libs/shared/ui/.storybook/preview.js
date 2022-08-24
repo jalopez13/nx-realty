@@ -1,6 +1,8 @@
+import { RouterContext } from 'next/dist/shared/lib/router-context';
+import * as NextImage from 'next/image';
 import './tailwind-imports.css';
 
-// viewports
+// Viewports
 
 const BREAKPOINTS_INIT = {
   xs: 375,
@@ -23,7 +25,10 @@ const customViewports = Object.fromEntries(
   ])
 );
 
+// Decorators
 export const decorators = [];
+
+// Parameters
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -42,4 +47,17 @@ export const parameters = {
     },
   },
   viewport: { viewports: customViewports },
+  nextRouter: {
+    Provider: RouterContext.Provider,
+  },
 };
+
+// Fix: NextImage
+
+const OriginalNextImage = NextImage.default;
+
+// eslint-disable-next-line no-import-assign
+Object.defineProperty(NextImage, 'default', {
+  configurable: true,
+  value: (props) => <OriginalNextImage {...props} unoptimized />,
+});

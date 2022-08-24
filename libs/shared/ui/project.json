@@ -32,7 +32,19 @@
         "port": 4400,
         "config": {
           "configFolder": "libs/shared/ui/.storybook"
-        }
+        },
+        "assets": [
+          {
+            "input": "libs/shared/assets/src/",
+            "glob": "**/*.jpg",
+            "output": "assets"
+          },
+          {
+            "input": "libs/shared/assets/src/svgs",
+            "glob": "**/*.svg",
+            "output": "assets/svgs"
+          }
+        ]
       },
       "configurations": {
         "ci": {
@@ -50,7 +62,19 @@
         "outputPath": "dist/storybook/shared-ui",
         "config": {
           "configFolder": "libs/shared/ui/.storybook"
-        }
+        },
+        "assets": [
+          {
+            "input": "libs/shared/assets/src/images",
+            "glob": "**/*.jpg",
+            "output": "assets/images"
+          },
+          {
+            "input": "libs/shared/assets/src/svgs",
+            "glob": "**/*.svg",
+            "output": "assets/svgs"
+          }
+        ]
       },
       "configurations": {
         "ci": {
