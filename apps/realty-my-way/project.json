@@ -14,12 +14,7 @@
         "outputPath": "dist/apps/realty-my-way",
         "assets": [
           {
-            "input": "libs/shared/assets/src",
-            "glob": "**/*.jpg",
-            "output": "assets"
-          },
-          {
-            "input": "libs/shared/assets/src/svgs",
+            "input": "libs/shared/assets/src/svgs/",
             "glob": "**/*.svg",
             "output": "assets/svgs"
           }
@@ -40,12 +35,7 @@
         "dev": true,
         "assets": [
           {
-            "input": "libs/shared/assets/src",
-            "glob": "**/*.jpg",
-            "output": "assets"
-          },
-          {
-            "input": "libs/shared/assets/src/svgs",
+            "input": "libs/shared/assets/src/svgs/",
             "glob": "**/*.svg",
             "output": "assets/svgs"
           }
@@ -90,5 +80,5 @@
       }
     }
   },
-  "tags": []
+  "tags": ["type:app"]
 }

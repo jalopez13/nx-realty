@@ -6,7 +6,8 @@
     "../../.eslintrc.json"
   ],
   "ignorePatterns": [
-    "!**/*"
+    "!**/*",
+    ".next"
   ],
   "overrides": [
     {

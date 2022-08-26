@@ -1,11 +1,12 @@
+/* eslint-disable @next/next/no-img-element */
 import { BaseLayout } from '@nx-realty/shared/ui';
 import { ReactElement } from 'react';
 import type { NextPageWithLayout } from './_app';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface HomePage {}
+export interface IHomePage {}
 
-const HomePage: NextPageWithLayout = () => {
+const HomePage: NextPageWithLayout = (prosp: IHomePage) => {
   return (
     <>
       <h1>HomePage</h1>

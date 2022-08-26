@@ -25,9 +25,6 @@ const customViewports = Object.fromEntries(
   ])
 );
 
-// Decorators
-export const decorators = [];
-
 // Parameters
 
 export const parameters = {
