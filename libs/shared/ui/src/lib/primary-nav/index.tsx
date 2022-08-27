@@ -1,5 +1,5 @@
 import { INavItems } from '@nx-realty/shared/types';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { FaHome } from 'react-icons/fa';
 import { IoClose, IoMenu } from 'react-icons/io5';
 import Link from '../link';
@@ -9,12 +9,14 @@ const linkClasses = 'text-lg hover:text-purple-400 duration-500';
 export const PrimaryNav = ({ navItems }: INavItems) => {
   const [open, setOpen] = useState(true);
 
-  const menu = document.getElementById('menu');
+  const menuRef = useRef(null);
 
   const toggleMenu = () => {
+    const menu = menuRef?.current;
+
     if (!open) {
-      menu?.classList.add('top-[80px]');
-      menu?.classList.add('opacity-100');
+      menu.classList?.add('top-[80px]');
+      menu.classList.add('opacity-100');
       setOpen(true);
     } else {
       menu?.classList.remove('top-[80px]');
@@ -42,12 +44,12 @@ export const PrimaryNav = ({ navItems }: INavItems) => {
       </div>
 
       <ul
-        id="menu"
+        ref={menuRef}
         className="md:flex md:items-center md:space-x-4 mt-2 md:z-auto md:static z-10 bg-white md:bg-transparent w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 absolute top-[-400px] opacity-0 md:opacity-100 transition-all ease-in duration-500"
       >
         {navItems.map(({ name, path }) => {
           return (
-            <li>
+            <li key={name}>
               <Link href={path} classes={linkClasses}>
                 {name}
               </Link>
