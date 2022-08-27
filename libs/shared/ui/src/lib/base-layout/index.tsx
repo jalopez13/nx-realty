@@ -1,3 +1,4 @@
+import { Footer, PrimaryNav } from '@nx-realty/shared/ui';
 import { ReactElement } from 'react';
 
 export interface IBaseLayout {
@@ -6,15 +7,17 @@ export interface IBaseLayout {
 
 export const BaseLayout = ({ children }: IBaseLayout) => {
   return (
-    <main className="app">
-      <section className="header">
-        <h1>Header</h1>
-      </section>
+    <div className="container mx-auto px-4 overflow-hidden">
+      <PrimaryNav
+        navItems={[
+          { name: 'Buy', path: '/buy' },
+          { name: 'Sell', path: '/sell' },
+          { name: 'Rent', path: '/rent' },
+        ]}
+      />
       {children}
-      <section className="header">
-        <h1>Footer</h1>
-      </section>
-    </main>
+      <Footer />
+    </div>
   );
 };
 

@@ -12,7 +12,10 @@ module.exports = {
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {},
+      ontFamily: {},
+    },
   },
   plugins: [require('@tailwindcss/typography')],
 };

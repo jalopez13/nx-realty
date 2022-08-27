@@ -13,7 +13,7 @@ const nextConfig = {
     svgr: true,
   },
   images: {
-    domains: ['cdn.britannica.com'],
+    domains: ['cdn.britannica.com', 'flowbite.com'],
   },
 };
 
