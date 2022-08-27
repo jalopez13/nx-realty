@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-nx affected --target=lint,test --all
+nx affected --target=lint,test --base=main --head=HEAD
 
