@@ -7,7 +7,7 @@ export interface IBaseLayout {
 
 export const BaseLayout = ({ children }: IBaseLayout) => {
   return (
-    <div className="container mx-auto px-4 overflow-hidden">
+    <div className="px-4 overflow-hidden">
       <PrimaryNav
         navItems={[
           { name: 'Buy', path: '/buy' },

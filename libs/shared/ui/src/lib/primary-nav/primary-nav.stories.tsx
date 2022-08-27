@@ -13,5 +13,5 @@ const Template: Story<INavItems> = (args) => <PrimaryNav {...args} />;
 export const Primary = Template.bind({});
 
 Primary.args = {
-  ...mockBaseComponentProps.base
+  navItems: [...mockBaseComponentProps.base.navItems]
 } as INavItems;

@@ -43,6 +43,7 @@ export const parameters = {
       millisecond: /Second$/i,
     },
   },
+  layout: 'fullscreen',
   viewport: { viewports: customViewports },
   nextRouter: {
     Provider: RouterContext.Provider,

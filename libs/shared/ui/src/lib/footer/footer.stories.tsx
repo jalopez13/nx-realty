@@ -6,7 +6,7 @@ export default {
   title: 'Shared/UI/Footer',
 } as Meta;
 
-const Template: Story = (args) => <footer {...args} />;
+const Template: Story = (args) => <Footer {...args} />;
 
 export const Primary = Template.bind({});
 
