@@ -13,8 +13,16 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {},
-      ontFamily: {},
+      colors: {
+        brand: {
+          light: '#fff',
+          DEFAULT: '#fff',
+          dark: '#000',
+        },
+      },
+      fontFamily: {
+        headline: 'Poppins, sans-serif',
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],
