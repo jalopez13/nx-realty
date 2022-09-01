@@ -6,6 +6,7 @@ module.exports = {
     '@storybook/addon-a11y',
     '@storybook/addon-essentials',
     'storybook-addon-next-router',
+    'storybook-tailwind-dark-mode',
   ],
   // uncomment the property below if you want to apply some webpack config globally
   // webpackFinal: async (config, { configType }) => {

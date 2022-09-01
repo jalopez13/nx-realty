@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer components {
-  .btn {
-    @apply bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 text-white transition-colors duration-300 px-7 py-3 rounded-full;
+  .search-link-active {
+    @apply underline underline-offset-4 text-white/100;
   }
 }
+
+@layer utilities {}
+
+

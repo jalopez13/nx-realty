@@ -37,14 +37,14 @@
         },
         "assets": [
           {
-            "input": "libs/shared/assets/src/",
-            "glob": "**/*.*",
-            "output": "assets"
-          },
-          {
             "input": "libs/shared/assets/src/svgs",
             "glob": "**/*.svg",
             "output": "assets/svgs"
+          },
+          {
+            "input": "libs/shared/assets/src/images/",
+            "glob": "**/*.*",
+            "output": "assets/images"
           }
         ]
       },
@@ -67,14 +67,14 @@
         },
         "assets": [
           {
-            "input": "libs/shared/assets/src/",
-            "glob": "**/*.*",
-            "output": "assets"
-          },
-          {
             "input": "libs/shared/assets/src/svgs",
             "glob": "**/*.svg",
-            "output": "assets/svgs"
+            "output": "/assets/svgs"
+          },
+          {
+            "input": "libs/shared/assets/src/images/",
+            "glob": "**/*.*",
+            "output": "/assets/images"
           }
         ]
       },

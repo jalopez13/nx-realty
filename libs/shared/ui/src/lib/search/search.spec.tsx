@@ -1,9 +1,10 @@
 import { render } from '@testing-library/react';
-import PrimaryNav from '.';
 
-describe('PrimaryNav', () => {
+import Search from '.';
+
+describe('Button', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<PrimaryNav />);
+    const { baseElement } = render(<Search />);
     expect(baseElement).toBeTruthy();
   });
 });

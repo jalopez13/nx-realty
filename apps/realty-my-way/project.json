@@ -17,6 +17,11 @@
             "input": "libs/shared/assets/src/svgs/",
             "glob": "**/*.svg",
             "output": "assets/svgs"
+          },
+          {
+            "input": "libs/shared/assets/src/images/",
+            "glob": "**/*.*",
+            "output": "assets/images"
           }
         ]
       },
@@ -38,6 +43,11 @@
             "input": "libs/shared/assets/src/svgs/",
             "glob": "**/*.svg",
             "output": "assets/svgs"
+          },
+          {
+            "input": "libs/shared/assets/src/images/",
+            "glob": "**/*.*",
+            "output": "assets/images"
           }
         ]
       },
@@ -80,5 +90,7 @@
       }
     }
   },
-  "tags": ["type:app"]
+  "tags": [
+    "type:app"
+  ]
 }

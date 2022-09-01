@@ -1,68 +1,112 @@
-import { INavItems } from '@nx-realty/shared/types';
-import { useRef, useState } from 'react';
-import { FaHome } from 'react-icons/fa';
-import { IoClose, IoMenu } from 'react-icons/io5';
-import Link from '../link';
+import { useTheme } from 'next-themes';
+import { useState } from 'react';
+import { IoClose, IoHome, IoMenu, IoMoon, IoSunny } from 'react-icons/io5';
 
-const linkClasses = 'text-lg hover:text-purple-400 duration-500';
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface IPrimaryNav {}
 
-export const PrimaryNav = ({ navItems }: INavItems) => {
-  const [open, setOpen] = useState(true);
+export const PrimaryNav = (props: IPrimaryNav) => {
+  const [navbarOpen, setNavbarOpen] = useState(false);
+  const { systemTheme, theme, setTheme } = useTheme();
 
-  const menuRef = useRef(null);
-
-  const toggleMenu = () => {
-    const menu = menuRef?.current;
-
-    if (!open) {
-      menu.classList?.add('top-[80px]');
-      menu.classList.add('opacity-100');
-      setOpen(true);
-    } else {
-      menu?.classList.remove('top-[80px]');
-      menu?.classList.remove('opacity-0');
-      setOpen(false);
-    }
-  };
+  const currentTheme = theme === 'system' ? systemTheme : theme;
 
   return (
-    <nav className="shadowp-5 bg-white md:flex md:items-center md:justify-between">
-      <div className="flex justify-between items-center">
-        <span className="text-2xl font-mono flex flex-row items-center cursor-pointer">
-          <span className="mr-2">
-            <FaHome className="w-7 h-7 fill-purple-600" />
-          </span>
-          <span className="mt-2 font-semibold text-gray-800">RealtyMyWay</span>
-        </span>
-
-        <span
-          className="text-3xl cursor-pointer md:hidden block fill-gray-800"
-          onClick={toggleMenu}
-        >
-          {open ? <IoMenu /> : <IoClose />}
-        </span>
-      </div>
-
-      <ul
-        ref={menuRef}
-        className="md:flex md:items-center md:space-x-4 mt-2 md:z-auto md:static z-10 bg-white md:bg-transparent w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 absolute top-[-400px] opacity-0 md:opacity-100 transition-all ease-in duration-500"
-      >
-        {navItems.map(({ name, path }) => {
-          return (
-            <li key={name}>
-              <Link href={path} classes={linkClasses}>
-                {name}
-              </Link>
-            </li>
-          );
-        })}
-
-        <li className="my-4">
-          <button className="px-6 py-2 bg-purple-700 text-white font-semibold text-center rounded duration-500 hover:bg-purple-500">
-            GET A QUOTE
+    <nav className="relative flex flex-wrap items-center justify-between px-2 py-3  shadow bg-brand-light dark:bg-brand-dark border-b border-gray-300 dark:border-brand-light">
+      <div className="container mx-auto flex flex-wrap items-center justify-between">
+        <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+          <a
+            className="font-bold leading-relaxed mr-4 py-2 whitespace-nowrap text-3xl flex flex-row items-center gap-4"
+            href="/"
+          >
+            <span className="text-brand-dark/70 dark:text-brand-light/70">
+              <IoHome />
+            </span>
+            <span className="text-gary-800 dark:text-brand-light">
+              RealtyMyWay
+            </span>
+          </a>
+          <button
+            className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+            type="button"
+            onClick={() => setNavbarOpen(!navbarOpen)}
+          >
+            {navbarOpen ? (
+              <IoClose className="w-8 h-8 text-brand-dark dark:text-brand-light" />
+            ) : (
+              <IoMenu className="w-8 h-8 text-brand-dark dark:text-brand-light" />
+            )}
           </button>
-        </li>
-      </ul>
+        </div>
+        <div
+          className={
+            'lg:flex flex-grow items-center' +
+            (navbarOpen ? ' flex' : ' hidden')
+          }
+          id="example-navbar-danger"
+        >
+          <ul className="flex flex-col lg:flex-row list-none lg:ml-auto pl-8">
+            <li className="nav-item">
+              <a
+                className="nav-item-link  py-2 flex items-center text-base uppercase font-medium leading-snug hover:opacity-75 duration-500 hover:underline hover:text-brand dark:text-brand-light"
+                href="/buy"
+              >
+                <span className="ml-4">Home</span>
+              </a>
+            </li>
+
+            <li className="nav-item">
+              <a
+                className="nav-item-link  py-2 flex items-center text-base uppercase font-medium leading-snug hover:opacity-75 duration-500 hover:underline hover:text-brand dark:text-brand-light"
+                href="/buy"
+              >
+                <span className="ml-4">Buy</span>
+              </a>
+            </li>
+
+            <li className="nav-item">
+              <a
+                className="nav-item-link  py-2 flex items-center text-base uppercase font-medium leading-snug hover:opacity-75 duration-500 hover:underline hover:text-brand dark:text-brand-light"
+                href="/sell"
+              >
+                <span className="ml-4">Sell</span>
+              </a>
+            </li>
+
+            <li className="nav-item">
+              <a
+                className="nav-item-link  py-2 flex items-center text-base uppercase font-medium leading-snug hover:opacity-75 duration-500 hover:underline hover:text-brand dark:text-brand-light"
+                href="/rent"
+              >
+                <span className="ml-4">Rent</span>
+              </a>
+            </li>
+
+            <li className="nav-item">
+              <button
+                onClick={() =>
+                  setTheme(currentTheme === 'dark' ? 'light' : 'dark')
+                }
+              >
+                {currentTheme === 'light' ? (
+                  <IoMoon className="text-brand-light bg-brand-dark/70 dark:text-brand-dark dark:bg-brand-light/70 w-9 h-9 cursor-pointer p-2 rounded ml-4 mb-2" />
+                ) : (
+                  <IoSunny className="text-brand-light bg-brand-dark/70 dark:text-brand-dark dark:bg-brand-light/70 w-9 h-9 cursor-pointer p-2 rounded ml-4 mb-2" />
+                )}
+              </button>
+            </li>
+
+            <li>
+              <a
+                className="btn focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 md:ml-4 mt-4 md:-mt-1 inline-block shadow duration-500 text-brand-light bg-brand-dark hover:text-white hover:bg-brand"
+                href="/mortgage"
+              >
+                <span>Home Loans</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
   );
 };

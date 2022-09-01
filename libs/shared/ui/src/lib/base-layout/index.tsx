@@ -1,5 +1,5 @@
-import { Footer, PrimaryNav } from '@nx-realty/shared/ui';
 import { ReactElement } from 'react';
+import { Carousel, Footer, Hero, PrimaryNav } from '../../index';
 
 export interface IBaseLayout {
   children: ReactElement;
@@ -7,15 +7,13 @@ export interface IBaseLayout {
 
 export const BaseLayout = ({ children }: IBaseLayout) => {
   return (
-    <div className="px-4 overflow-hidden">
-      <PrimaryNav
-        navItems={[
-          { name: 'Buy', path: '/buy' },
-          { name: 'Sell', path: '/sell' },
-          { name: 'Rent', path: '/rent' },
-        ]}
-      />
-      {children}
+    <div className="overflow-hidden min-h-screen w-full">
+      <PrimaryNav />
+      <Hero />
+      <main className="h-screen">
+        <Carousel />
+        <div className="container mx-auto px-4">{children}</div>
+      </main>
       <Footer />
     </div>
   );

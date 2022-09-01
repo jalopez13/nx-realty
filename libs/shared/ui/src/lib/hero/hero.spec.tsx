@@ -1,9 +1,10 @@
 import { render } from '@testing-library/react';
-import PrimaryNav from '.';
 
-describe('PrimaryNav', () => {
+import Hero from '.';
+
+describe('Hero', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<PrimaryNav />);
+    const { baseElement } = render(<Hero />);
     expect(baseElement).toBeTruthy();
   });
 });
