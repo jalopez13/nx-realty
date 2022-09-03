@@ -1,15 +1,14 @@
-/* eslint-disable @next/next/no-img-element */
 import { BaseLayout } from '@nx-realty/shared/ui';
+// import axios from 'axios';
 import { ReactElement } from 'react';
 import type { NextPageWithLayout } from './_app';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface IHomePage {}
+import { ApiResponse } from '@nx-realty/shared/types';
 
-const HomePage: NextPageWithLayout = (prosp: IHomePage) => {
+const HomePage: NextPageWithLayout = ({ message }: ApiResponse) => {
   return (
     <>
-      <h1>HomePage</h1>
+      <h1>HomePage - {message}</h1>
     </>
   );
 };
@@ -17,3 +16,13 @@ const HomePage: NextPageWithLayout = (prosp: IHomePage) => {
 HomePage.getLayout = (page: ReactElement) => <BaseLayout>{page}</BaseLayout>;
 
 export default HomePage;
+
+export const getStaticProps = async (ctx) => {
+  // const response = await axios(`${process.env.API_ENDPOINT}`);
+
+  return {
+    props: {
+      message: 'hello sucka!',
+    },
+  };
+};

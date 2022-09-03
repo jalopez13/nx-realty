@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Carousel, Footer, Hero, PrimaryNav } from '../../index';
+import { Footer, Hero } from '../../index';
 
 export interface IBaseLayout {
   children: ReactElement;
@@ -8,12 +8,9 @@ export interface IBaseLayout {
 export const BaseLayout = ({ children }: IBaseLayout) => {
   return (
     <div className="overflow-hidden min-h-screen w-full">
-      <PrimaryNav />
+      {/* <PrimaryNav /> */}
       <Hero />
-      <main className="h-screen">
-        <Carousel />
-        <div className="container mx-auto px-4">{children}</div>
-      </main>
+      <main className="h-screen container mx-auto px-4">{children}</main>
       <Footer />
     </div>
   );

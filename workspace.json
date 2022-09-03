@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "apollo-express-api": "apps/apollo-express-api",
     "realty-my-way": "apps/realty-my-way",
     "shared-assets": "libs/shared/assets",
     "shared-types": "libs/shared/types",
