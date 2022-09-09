@@ -1,31 +1,33 @@
-import { ApolloServer } from "apollo-server-express";
-import * as express from 'express';
+import { ApolloServerPluginDrainHttpServer, ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
+import { ApolloServer } from 'apollo-server-express';
+import { createServer } from 'http';
 import { resolvers, typeDefs } from './graphql';
-import microCors = require('micro-cors');
+import express = require('express');
 
-const startServer = async () => {
-  // app init
+const startApolloServer = async (typeDefs, resolvers) => {
   const app = express();
-  const port = process.env.port || 4000; 
 
-    // middleware
-    app.use(microCors());
-    
-  // server
-  const apolloServer = new ApolloServer({
+  const httpServer = createServer(app);
+
+  const server = new ApolloServer({
     typeDefs,
-    resolvers
+    resolvers,
+    csrfPrevention: true,
+    cache: 'bounded',
+    plugins: [
+      ApolloServerPluginDrainHttpServer({ httpServer }),
+      ApolloServerPluginLandingPageLocalDefault({ embed: true }),
+    ],
   });
 
-  await apolloServer.start();
+  await server.start();
 
-  apolloServer.applyMiddleware({ app })
-
-  app.use((_req, res) => {
-    res.send("Hello from express apollo server");
+  server.applyMiddleware({
+    app,
+    path: '/',
   });
 
-  app.listen({ port }, () => console.log(`Apollo server running on port ${port}`));
-}
+  httpServer.listen({ port: 4000 }, () => console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`));
+};
 
-startServer();
+startApolloServer(typeDefs, resolvers);
