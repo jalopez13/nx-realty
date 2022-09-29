@@ -1,0 +1,25 @@
+query Properties($params: PropertiesParams) {
+  properties(params: $params) {
+    props {
+      bathrooms
+      listingDateTime
+      propertyType
+      latitude
+      price
+      listingStatus
+      zpid
+      longitude
+      livingArea
+      address
+      bedrooms
+      imgSrc
+      country
+      currency
+      daysOnZillow
+      hasImage
+    }
+    resultsPerPage
+    totalResultCount
+    totalPages
+  }
+}

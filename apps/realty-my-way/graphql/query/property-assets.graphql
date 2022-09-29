@@ -1,0 +1,5 @@
+query Property_assets($zpid: String!) {
+  property_assets(zpid: $zpid) {
+    images
+  }
+}

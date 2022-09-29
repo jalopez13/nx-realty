@@ -1,66 +1,14 @@
-const { createGlobPatternsForDependencies } = require('@nrwl/react/tailwind');
-const defaultTheme = require('tailwindcss/defaultTheme');
+const { createGlobPatternsForDependencies } = require('@nrwl/next/tailwind');
 const { join } = require('path');
 
-/** @type {import('tailwindcss').Config} */
-
 module.exports = {
-  darkMode: 'class',
+  presets: [
+    require('../../tailwind-workspace-preset.js'),
+    require('../../theme/realty-my-way.js'),
+  ],
   content: [
-    join(
-      __dirname,
-      '{src,pages,components}/**/*!(*.stories|*.spec).{ts,tsx,html}'
-    ),
+    join(process.cwd(), 'pages/**/*.{js,ts,jsx,tsx}'),
     ...createGlobPatternsForDependencies(__dirname),
   ],
-  theme: {
-    screens: {
-      sm: '640px',
-      md: '900px',
-      lg: '1024px',
-      xl: '1260px',
-    },
-    container: {
-      center: true,
-    },
-    extend: {
-      fontFamily: {
-        proxima: ['Proxima Nova', ...defaultTheme.fontFamily.sans],
-        proximabold: ['Proxima Nova Bold', ...defaultTheme.fontFamily.sans],
-      },
-      colors: {
-        // Red and black
-        // brand: {
-        //   dark: '#97010E',
-        //   DEFAULT: '#1f2937',
-        //   light: '#ffffff',
-        // },
-        // teal and yellow
-        // brand: {
-        //   dark: '#003b49',
-        //   DEFAULT: '#ffc845',
-        //   light: '#ffffff',
-        // },
-        // plum and yellow
-        // brand: {
-        //   dark: '#41314c',
-        //   DEFAULT: '#ffc845',
-        //   light: '#ffffff',
-        // },
-        // green
-        // brand: {
-        //   dark: '#344C11',
-        //   DEFAULT: '#AEC670',
-        //   light: '#ffffff',
-        // },
-        // blue
-        // brand: {
-        //   dark: '#64829B',
-        //   DEFAULT: '#A0C4DC',
-        //   light: '#ffffff',
-        // },
-      },
-    },
-  },
-  plugins: [require('@tailwindcss/typography')],
+  darkMode: 'class', // or 'media' or 'class'
 };

@@ -1,0 +1,34 @@
+query Property($zpid: String!) {
+  property(zpid: $zpid) {
+    zpid
+    streetAddress
+    city
+    state
+    zipcode
+    country
+    currency
+    imgSrc
+    propertyTaxRate
+    latitude
+    longitude
+    timeOnZillow
+    livingAreaValue
+    isListedByOwner
+    propertyTypeDimension
+    timeZone
+    homeType
+    livingAreaUnits
+    livingArea
+    bathrooms
+    bedrooms
+    annualHomeownersInsurance
+    rentZestimate
+    yearBuilt
+    dateSold
+    price
+    description
+    homeStatus
+    datePosted
+    monthlyHoaFee
+  }
+}

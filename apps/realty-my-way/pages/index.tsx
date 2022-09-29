@@ -1,14 +1,17 @@
 import { BaseLayout } from '@nx-realty/shared/ui';
-// import axios from 'axios';
+import Link from 'next/link';
 import { ReactElement } from 'react';
 import type { NextPageWithLayout } from './_app';
 
-import { ApiResponse } from '@nx-realty/shared/types';
-
-const HomePage: NextPageWithLayout = ({ message }: ApiResponse) => {
+const HomePage: NextPageWithLayout = () => {
   return (
     <>
-      <h1>HomePage - {message}</h1>
+      <h1>Hello</h1>
+      <div>
+        <Link href={'/ssr'}>SSR</Link> <br />
+        <Link href={'/csr'}>CSR</Link> <br />
+        <Link href={'/ssg'}>SSG</Link>
+      </div>
     </>
   );
 };
@@ -16,13 +19,3 @@ const HomePage: NextPageWithLayout = ({ message }: ApiResponse) => {
 HomePage.getLayout = (page: ReactElement) => <BaseLayout>{page}</BaseLayout>;
 
 export default HomePage;
-
-export const getStaticProps = async (ctx) => {
-  // const response = await axios(`${process.env.API_ENDPOINT}`);
-
-  return {
-    props: {
-      message: 'hello sucka!',
-    },
-  };
-};
