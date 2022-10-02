@@ -16,9 +16,9 @@ export const fetchProperty = async (params) => {
     const data = await response.data;
 
     if (process.env.NODE_ENV !== 'production') {
+      console.log('PASSED PARAMS: ', params.params);
       console.log('FETCH PROPERTY DATA: ', data);
     }
-    console.log('PROPS ==> ', params);
     return data;
   } catch (err) {
     console.error(err);

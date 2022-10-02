@@ -1,34 +1,178 @@
 query Property($zpid: String!) {
   property(zpid: $zpid) {
-    zpid
-    streetAddress
-    city
-    state
-    zipcode
-    country
-    currency
-    imgSrc
+    listingProvider {
+      enhancedVideoURL
+      showNoContactInfoMessage
+      postingGroupName
+      isZRMSourceText
+      showLogos
+      disclaimerText
+      sourceText
+      title
+      postingWebsiteURL
+      agentLicenseInt
+      postingWebsiteLinkText
+      enhancedDescriptionText
+      agentName
+    }
     propertyTaxRate
-    latitude
+    contact_recipients {
+      agent_reason
+      zpro
+      recent_sales
+      review_count
+      display_name
+      zuid
+      rating_average
+      badge_typ
+      phone {
+        prefix
+        areacode
+        Int
+      }
+      image_url
+    }
+    solarPotential
     longitude
+    countyFIPS
+    cityId
     timeOnZillow
+    url
+    zestimate
+    imgSrc
+    zpid
+    zipcode
     livingAreaValue
+    zestimateLowPercent
     isListedByOwner
     propertyTypeDimension
+    resoFacts {
+      hasAttachedProperty
+      frontageType
+      poolFeatures
+      flooring
+      accessibilityFeatures
+      hasGarage
+      hasPetsAllowed
+      bodyType
+      topography
+      landLeaseExpirationDate
+      hasAdditionalParcels
+      waterViewYN
+      atAGlanceFacts {
+        factLabel
+        factValue
+      }
+      offerReviewDate
+      aboveGradeFinishedArea
+    }
+    streetAddress
+    county
     timeZone
     homeType
     livingAreaUnits
     livingArea
     bathrooms
-    bedrooms
     annualHomeownersInsurance
+    state
     rentZestimate
     yearBuilt
     dateSold
     price
     description
+    mortgageRates {
+      arm5Rate
+      fifteenYearFixedRate
+      thirtyYearFixedRate
+    }
     homeStatus
+    latitude
     datePosted
+    bedrooms
+    nearbyHomes {
+      miniCardPhotos {
+        url
+      }
+      zpid
+      longitude
+      address {
+        city
+        state
+        streetAddress
+        zipcode
+      }
+      price
+      homeType
+      homeStatus
+      currency
+      latitude
+    }
     monthlyHoaFee
+    priceHistory {
+      priceChangeRate
+      date
+      source
+      postingIsRental
+      time
+      sellerAgent {
+        name
+        photo {
+          url
+        }
+        profileUrl
+      }
+      showCountyLink
+      attributeSource {
+        infoString2
+        infoString3
+        infoString1
+      }
+      pricePerSquareFoot
+      buyerAgent {
+        name
+        photo {
+          url
+        }
+        profileUrl
+      }
+      event
+      price
+    }
+    schools {
+      link
+      rating
+      totalCount
+      distance
+      assigned
+      name
+      studentsPerTeacher
+      isAssigned
+      size
+      level
+      grades
+      type
+    }
+    address {
+      city
+      state
+      streetAddress
+      zipcode
+    }
+    city
+    country
+    currency
+    listed_by {
+      agent_reason
+      zpro
+      recent_sales
+      review_count
+      display_name
+      badge_type
+      business_name
+      rating_average
+      phone
+      zuid
+      image_url
+    }
   }
 }

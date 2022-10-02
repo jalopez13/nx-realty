@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-export const fetchPropertyAssets = async (params) => {
+export const fetchPropertiesByCoordinates = async (params) => {
   try {
     const options = {
       method: 'GET',
-      url: `${process.env.RAPID_API_HOST_FULL}/images`,
-      params: { ...params },
+      url: `${process.env.RAPID_API_HOST_FULL}/propertyByCoordinates`,
+      params: params.params,
       headers: {
         'X-RapidAPI-Key': `${process.env.RAPID_API_KEY}`,
         'X-RapidAPI-Host': `${process.env.RAPID_API_HOST}`,
@@ -17,7 +17,7 @@ export const fetchPropertyAssets = async (params) => {
 
     if (process.env.NODE_ENV !== 'production') {
       console.log('PASSED PARAMS: ', params.params);
-      console.log('FETCH PROPERTY ASSETS DATA: ', data);
+      console.log('FETCH PROPERTIES BY COORDINATES DATA: ', data);
     }
 
     return data;

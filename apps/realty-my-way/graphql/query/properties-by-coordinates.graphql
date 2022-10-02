@@ -1,0 +1,22 @@
+query Properties_by_coordinates($params: PropertiesByCoordinatesParams) {
+  properties_by_coordinates(params: $params) {
+    property {
+      bathrooms
+      bedrooms
+      zpid
+      longitude
+      address {
+        city
+        state
+        streetAddress
+        zipcode
+      }
+      latitude
+      livingArea
+      homeType
+      homeStatus
+      imgSrc
+      price
+    }
+  }
+}

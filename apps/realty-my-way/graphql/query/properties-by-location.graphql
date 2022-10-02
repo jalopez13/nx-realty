@@ -1,0 +1,19 @@
+query Properties_by_location($q: String!) {
+  properties_by_location(q: $q) {
+    resultType
+    results {
+      display
+      metaData {
+        city
+        country
+        county
+        lat
+        lng
+        regionId
+        regionType
+        score
+        state
+      }
+    }
+  }
+}
