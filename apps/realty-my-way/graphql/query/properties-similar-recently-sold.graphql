@@ -1,4 +1,4 @@
-query Properties_similar_recently_sold($zpid: String!) {
+query properties_similar_recently_sold($zpid: String!) {
   properties_similar_recently_sold(zpid: $zpid) {
     dateSold
     bedrooms

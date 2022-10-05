@@ -18,17 +18,23 @@ function createIsomorphLink() {
   }
 }
 
+const cache = new InMemoryCache({
+  typePolicies: {
+    Properties: {
+      keyFields: ['props', ['zpid']],
+    },
+    Property: {
+      keyFields: ['property', ['zpid']],
+    },
+  },
+});
+
 function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: createIsomorphLink(),
-    cache: new InMemoryCache({
-      // typePolicies: {
-      //   Properties: {},
-      //   Property: {},
-      //   PropertyAssets: {},
-      // },
-    }),
+    cache,
+    connectToDevTools: true,
   });
 }
 

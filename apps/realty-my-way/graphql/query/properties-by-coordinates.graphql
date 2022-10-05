@@ -1,4 +1,4 @@
-query Properties_by_coordinates($params: PropertiesByCoordinatesParams) {
+query properties_by_coordinates($params: PropertiesByCoordinatesParams) {
   properties_by_coordinates(params: $params) {
     property {
       bathrooms

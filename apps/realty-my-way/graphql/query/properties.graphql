@@ -1,6 +1,5 @@
-query Properties($params: PropertiesParams) {
+query properties($params: PropertiesParams) {
   properties(params: $params) {
-    id
     props {
       bathrooms
       listingDateTime

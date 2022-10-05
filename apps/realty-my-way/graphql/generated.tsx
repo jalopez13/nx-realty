@@ -149,11 +149,25 @@ export type PriceHistory = {
   time?: Maybe<Scalars['Float']>;
 };
 
+export type Properties = {
+  __typename?: 'Properties';
+  props?: Maybe<Array<Maybe<PropertyType>>>;
+  resultsPerPage?: Maybe<Scalars['Int']>;
+  totalPages?: Maybe<Scalars['Int']>;
+  totalResultCount?: Maybe<Scalars['Int']>;
+};
+
 export type PropertiesByCoordinatesParams = {
   d?: InputMaybe<Scalars['String']>;
   includeSold?: InputMaybe<Scalars['String']>;
   lat: Scalars['Float'];
   long: Scalars['Float'];
+};
+
+export type PropertiesByLocation = {
+  __typename?: 'PropertiesByLocation';
+  resultType: Scalars['String'];
+  results?: Maybe<Array<Maybe<PropertiesbyLocationProperty>>>;
 };
 
 export type PropertiesByLocationMetaData = {
@@ -167,12 +181,6 @@ export type PropertiesByLocationMetaData = {
   regionType?: Maybe<Scalars['String']>;
   score?: Maybe<Scalars['Float']>;
   state?: Maybe<Scalars['String']>;
-};
-
-export type PropertiesByLocationResults = {
-  __typename?: 'PropertiesByLocationResults';
-  resultType: Scalars['String'];
-  results?: Maybe<Array<Maybe<PropertiesbyLocationProperty>>>;
 };
 
 export type PropertiesParams = {
@@ -207,67 +215,14 @@ export enum PropertiesParamsStatusType {
   RecentlySold = 'RecentlySold'
 }
 
-export type PropertiesResults = {
-  __typename?: 'PropertiesResults';
-  props?: Maybe<Array<Maybe<PropertiesType>>>;
-  resultsPerPage?: Maybe<Scalars['Int']>;
-  totalPages?: Maybe<Scalars['Int']>;
-  totalResultCount?: Maybe<Scalars['Int']>;
-};
-
-export type PropertiesType = {
-  __typename?: 'PropertiesType';
-  address?: Maybe<Scalars['String']>;
-  bathrooms?: Maybe<Scalars['Int']>;
-  bedrooms?: Maybe<Scalars['Int']>;
-  country?: Maybe<Scalars['String']>;
-  currency?: Maybe<Scalars['String']>;
-  daysOnZillow?: Maybe<Scalars['Int']>;
-  hasImage?: Maybe<Scalars['Boolean']>;
-  imgSrc?: Maybe<Scalars['String']>;
-  latitude?: Maybe<Scalars['Float']>;
-  listingDateTime?: Maybe<Scalars['Float']>;
-  listingStatus?: Maybe<Scalars['String']>;
-  livingArea?: Maybe<Scalars['Int']>;
-  longitude?: Maybe<Scalars['Float']>;
-  price?: Maybe<Scalars['Int']>;
-  propertyType?: Maybe<Scalars['String']>;
-  zpid?: Maybe<Scalars['String']>;
-};
-
 export type PropertiesbyLocationProperty = {
   __typename?: 'PropertiesbyLocationProperty';
   display?: Maybe<Scalars['String']>;
   metaData?: Maybe<PropertiesByLocationMetaData>;
 };
 
-export type PropertyAssetsResults = {
-  __typename?: 'PropertyAssetsResults';
-  images: Array<Maybe<Scalars['String']>>;
-};
-
-export type PropertyByCoordinates = {
-  __typename?: 'PropertyByCoordinates';
-  property?: Maybe<PropertyByCoordinatesProperty>;
-};
-
-export type PropertyByCoordinatesProperty = {
-  __typename?: 'PropertyByCoordinatesProperty';
-  address?: Maybe<Address>;
-  bathrooms?: Maybe<Scalars['Int']>;
-  bedrooms?: Maybe<Scalars['Int']>;
-  homeStatus?: Maybe<Scalars['String']>;
-  homeType?: Maybe<Scalars['String']>;
-  imgSrc?: Maybe<Scalars['String']>;
-  latitude?: Maybe<Scalars['Float']>;
-  livingArea?: Maybe<Scalars['Int']>;
-  longitude?: Maybe<Scalars['Float']>;
-  price?: Maybe<Scalars['Int']>;
-  zpid?: Maybe<Scalars['String']>;
-};
-
-export type PropertyResults = {
-  __typename?: 'PropertyResults';
+export type Property = {
+  __typename?: 'Property';
   address?: Maybe<Address>;
   annualHomeownersInsurance?: Maybe<Scalars['Int']>;
   bathrooms?: Maybe<Scalars['Int']>;
@@ -316,8 +271,33 @@ export type PropertyResults = {
   zpid?: Maybe<Scalars['Int']>;
 };
 
-export type PropertySimilarForSaleResults = {
-  __typename?: 'PropertySimilarForSaleResults';
+export type PropertyAssets = {
+  __typename?: 'PropertyAssets';
+  images: Array<Maybe<Scalars['String']>>;
+};
+
+export type PropertyByCoordinates = {
+  __typename?: 'PropertyByCoordinates';
+  property?: Maybe<PropertyByCoordinatesProperty>;
+};
+
+export type PropertyByCoordinatesProperty = {
+  __typename?: 'PropertyByCoordinatesProperty';
+  address?: Maybe<Address>;
+  bathrooms?: Maybe<Scalars['Int']>;
+  bedrooms?: Maybe<Scalars['Int']>;
+  homeStatus?: Maybe<Scalars['String']>;
+  homeType?: Maybe<Scalars['String']>;
+  imgSrc?: Maybe<Scalars['String']>;
+  latitude?: Maybe<Scalars['Float']>;
+  livingArea?: Maybe<Scalars['Int']>;
+  longitude?: Maybe<Scalars['Float']>;
+  price?: Maybe<Scalars['Int']>;
+  zpid?: Maybe<Scalars['String']>;
+};
+
+export type PropertySimilarForSale = {
+  __typename?: 'PropertySimilarForSale';
   address?: Maybe<Address>;
   bathrooms?: Maybe<Scalars['Int']>;
   bedrooms?: Maybe<Scalars['Int']>;
@@ -332,8 +312,8 @@ export type PropertySimilarForSaleResults = {
   zpid?: Maybe<Scalars['Int']>;
 };
 
-export type PropertySimilarRecentlySoldResults = {
-  __typename?: 'PropertySimilarRecentlySoldResults';
+export type PropertySimilarRecentlySold = {
+  __typename?: 'PropertySimilarRecentlySold';
   address?: Maybe<Address>;
   bathrooms?: Maybe<Scalars['Int']>;
   bedrooms?: Maybe<Scalars['Int']>;
@@ -351,15 +331,35 @@ export type PropertySimilarRecentlySoldResults = {
   zpid?: Maybe<Scalars['Int']>;
 };
 
+export type PropertyType = {
+  __typename?: 'PropertyType';
+  address?: Maybe<Scalars['String']>;
+  bathrooms?: Maybe<Scalars['Int']>;
+  bedrooms?: Maybe<Scalars['Int']>;
+  country?: Maybe<Scalars['String']>;
+  currency?: Maybe<Scalars['String']>;
+  daysOnZillow?: Maybe<Scalars['Int']>;
+  hasImage?: Maybe<Scalars['Boolean']>;
+  imgSrc?: Maybe<Scalars['String']>;
+  latitude?: Maybe<Scalars['Float']>;
+  listingDateTime?: Maybe<Scalars['Float']>;
+  listingStatus?: Maybe<Scalars['String']>;
+  livingArea?: Maybe<Scalars['Int']>;
+  longitude?: Maybe<Scalars['Float']>;
+  price?: Maybe<Scalars['Int']>;
+  propertyType?: Maybe<Scalars['String']>;
+  zpid?: Maybe<Scalars['String']>;
+};
+
 export type Query = {
   __typename?: 'Query';
-  properties?: Maybe<PropertiesResults>;
+  properties?: Maybe<Properties>;
   properties_by_coordinates: Array<Maybe<PropertyByCoordinates>>;
-  properties_by_location?: Maybe<PropertiesByLocationResults>;
-  properties_similar_for_sale: Array<Maybe<PropertySimilarForSaleResults>>;
-  properties_similar_recently_sold: Array<Maybe<PropertySimilarRecentlySoldResults>>;
-  property?: Maybe<PropertyResults>;
-  property_assets?: Maybe<PropertyAssetsResults>;
+  properties_by_location?: Maybe<PropertiesByLocation>;
+  properties_similar_for_sale: Array<Maybe<PropertySimilarForSale>>;
+  properties_similar_recently_sold: Array<Maybe<PropertySimilarRecentlySold>>;
+  property?: Maybe<Property>;
+  property_assets?: Maybe<PropertyAssets>;
 };
 
 
@@ -451,46 +451,46 @@ export type Properties_By_LocationQueryVariables = Exact<{
 }>;
 
 
-export type Properties_By_LocationQuery = { __typename?: 'Query', properties_by_location?: { __typename?: 'PropertiesByLocationResults', resultType: string, results?: Array<{ __typename?: 'PropertiesbyLocationProperty', display?: string | null, metaData?: { __typename?: 'PropertiesByLocationMetaData', city?: string | null, country?: string | null, county?: string | null, lat?: number | null, lng?: number | null, regionId?: string | null, regionType?: string | null, score?: number | null, state?: string | null } | null } | null> | null } | null };
+export type Properties_By_LocationQuery = { __typename?: 'Query', properties_by_location?: { __typename?: 'PropertiesByLocation', resultType: string, results?: Array<{ __typename?: 'PropertiesbyLocationProperty', display?: string | null, metaData?: { __typename?: 'PropertiesByLocationMetaData', city?: string | null, country?: string | null, county?: string | null, lat?: number | null, lng?: number | null, regionId?: string | null, regionType?: string | null, score?: number | null, state?: string | null } | null } | null> | null } | null };
 
 export type Properties_Similar_For_SaleQueryVariables = Exact<{
   zpid: Scalars['String'];
 }>;
 
 
-export type Properties_Similar_For_SaleQuery = { __typename?: 'Query', properties_similar_for_sale: Array<{ __typename?: 'PropertySimilarForSaleResults', bathrooms?: number | null, bedrooms?: number | null, zpid?: number | null, longitude?: number | null, latitude?: number | null, livingArea?: number | null, homeType?: string | null, livingAreaUnits?: string | null, currency?: string | null, price?: number | null, miniCardPhotos?: Array<{ __typename?: 'Photo', url?: string | null } | null> | null, address?: { __typename?: 'Address', city?: string | null, state?: string | null, streetAddress?: string | null, zipcode?: string | null } | null } | null> };
+export type Properties_Similar_For_SaleQuery = { __typename?: 'Query', properties_similar_for_sale: Array<{ __typename?: 'PropertySimilarForSale', bathrooms?: number | null, bedrooms?: number | null, zpid?: number | null, longitude?: number | null, latitude?: number | null, livingArea?: number | null, homeType?: string | null, livingAreaUnits?: string | null, currency?: string | null, price?: number | null, miniCardPhotos?: Array<{ __typename?: 'Photo', url?: string | null } | null> | null, address?: { __typename?: 'Address', city?: string | null, state?: string | null, streetAddress?: string | null, zipcode?: string | null } | null } | null> };
 
 export type Properties_Similar_Recently_SoldQueryVariables = Exact<{
   zpid: Scalars['String'];
 }>;
 
 
-export type Properties_Similar_Recently_SoldQuery = { __typename?: 'Query', properties_similar_recently_sold: Array<{ __typename?: 'PropertySimilarRecentlySoldResults', dateSold?: number | null, bedrooms?: number | null, homeStatus?: string | null, latitude?: number | null, zpid?: number | null, longitude?: number | null, bathrooms?: number | null, livingArea?: number | null, livingAreaUnits?: string | null, homeType?: string | null, currency?: string | null, lastSoldPrice?: number | null, price?: number | null, miniCardPhotos?: Array<{ __typename?: 'Photo', url?: string | null } | null> | null, address?: { __typename?: 'Address', city?: string | null, state?: string | null, streetAddress?: string | null, zipcode?: string | null } | null } | null> };
+export type Properties_Similar_Recently_SoldQuery = { __typename?: 'Query', properties_similar_recently_sold: Array<{ __typename?: 'PropertySimilarRecentlySold', dateSold?: number | null, bedrooms?: number | null, homeStatus?: string | null, latitude?: number | null, zpid?: number | null, longitude?: number | null, bathrooms?: number | null, livingArea?: number | null, livingAreaUnits?: string | null, homeType?: string | null, currency?: string | null, lastSoldPrice?: number | null, price?: number | null, miniCardPhotos?: Array<{ __typename?: 'Photo', url?: string | null } | null> | null, address?: { __typename?: 'Address', city?: string | null, state?: string | null, streetAddress?: string | null, zipcode?: string | null } | null } | null> };
 
 export type PropertiesQueryVariables = Exact<{
   params?: InputMaybe<PropertiesParams>;
 }>;
 
 
-export type PropertiesQuery = { __typename?: 'Query', properties?: { __typename?: 'PropertiesResults', resultsPerPage?: number | null, totalResultCount?: number | null, totalPages?: number | null, props?: Array<{ __typename?: 'PropertiesType', bathrooms?: number | null, listingDateTime?: number | null, propertyType?: string | null, latitude?: number | null, price?: number | null, listingStatus?: string | null, zpid?: string | null, longitude?: number | null, livingArea?: number | null, address?: string | null, bedrooms?: number | null, imgSrc?: string | null, country?: string | null, currency?: string | null, daysOnZillow?: number | null, hasImage?: boolean | null } | null> | null } | null };
+export type PropertiesQuery = { __typename?: 'Query', properties?: { __typename?: 'Properties', resultsPerPage?: number | null, totalResultCount?: number | null, totalPages?: number | null, props?: Array<{ __typename?: 'PropertyType', bathrooms?: number | null, listingDateTime?: number | null, propertyType?: string | null, latitude?: number | null, price?: number | null, listingStatus?: string | null, zpid?: string | null, longitude?: number | null, livingArea?: number | null, address?: string | null, bedrooms?: number | null, imgSrc?: string | null, country?: string | null, currency?: string | null, daysOnZillow?: number | null, hasImage?: boolean | null } | null> | null } | null };
 
 export type Property_AssetsQueryVariables = Exact<{
   zpid: Scalars['String'];
 }>;
 
 
-export type Property_AssetsQuery = { __typename?: 'Query', property_assets?: { __typename?: 'PropertyAssetsResults', images: Array<string | null> } | null };
+export type Property_AssetsQuery = { __typename?: 'Query', property_assets?: { __typename?: 'PropertyAssets', images: Array<string | null> } | null };
 
 export type PropertyQueryVariables = Exact<{
   zpid: Scalars['String'];
 }>;
 
 
-export type PropertyQuery = { __typename?: 'Query', property?: { __typename?: 'PropertyResults', propertyTaxRate?: number | null, solarPotential?: string | null, longitude?: number | null, countyFIPS?: string | null, cityId?: number | null, timeOnZillow?: string | null, url?: string | null, zestimate?: string | null, imgSrc?: string | null, zpid?: number | null, zipcode?: number | null, livingAreaValue?: number | null, zestimateLowPercent?: number | null, isListedByOwner?: boolean | null, propertyTypeDimension?: string | null, streetAddress?: string | null, county?: string | null, timeZone?: string | null, homeType?: string | null, livingAreaUnits?: string | null, livingArea?: number | null, bathrooms?: number | null, annualHomeownersInsurance?: number | null, state?: string | null, rentZestimate?: number | null, yearBuilt?: number | null, dateSold?: string | null, price?: number | null, description?: string | null, homeStatus?: string | null, latitude?: number | null, datePosted?: string | null, bedrooms?: number | null, monthlyHoaFee?: number | null, city?: string | null, country?: string | null, currency?: string | null, listingProvider?: { __typename?: 'ListingProvider', enhancedVideoURL?: string | null, showNoContactInfoMessage?: boolean | null, postingGroupName?: string | null, isZRMSourceText?: boolean | null, showLogos?: boolean | null, disclaimerText?: string | null, sourceText?: string | null, title?: string | null, postingWebsiteURL?: string | null, agentLicenseInt?: number | null, postingWebsiteLinkText?: string | null, enhancedDescriptionText?: string | null, agentName?: string | null } | null, contact_recipients: Array<{ __typename?: 'ContactRecipients', agent_reason?: number | null, zpro?: string | null, recent_sales?: number | null, review_count?: number | null, display_name?: string | null, zuid?: string | null, rating_average?: number | null, badge_typ?: string | null, image_url?: string | null, phone?: { __typename?: 'Phone', prefix?: string | null, areacode?: string | null, Int?: string | null } | null } | null>, resoFacts?: { __typename?: 'ResoFacts', hasAttachedProperty?: boolean | null, frontageType?: string | null, poolFeatures?: string | null, flooring?: Array<string | null> | null, accessibilityFeatures?: string | null, hasGarage?: boolean | null, hasPetsAllowed?: boolean | null, bodyType?: string | null, topography?: string | null, landLeaseExpirationDate?: string | null, hasAdditionalParcels?: boolean | null, waterViewYN?: string | null, offerReviewDate?: string | null, aboveGradeFinishedArea?: string | null, atAGlanceFacts: Array<{ __typename?: 'AtAGlance', factLabel?: string | null, factValue?: string | null } | null> } | null, mortgageRates?: { __typename?: 'MortgageRates', arm5Rate?: number | null, fifteenYearFixedRate?: number | null, thirtyYearFixedRate?: number | null } | null, nearbyHomes?: Array<{ __typename?: 'NearbyHomes', zpid?: number | null, longitude?: number | null, price?: number | null, homeType?: string | null, homeStatus?: string | null, currency?: string | null, latitude?: number | null, miniCardPhotos?: Array<{ __typename?: 'Photo', url?: string | null } | null> | null, address?: { __typename?: 'Address', city?: string | null, state?: string | null, streetAddress?: string | null, zipcode?: string | null } | null } | null> | null, priceHistory?: Array<{ __typename?: 'PriceHistory', priceChangeRate?: number | null, date?: string | null, source?: string | null, postingIsRental?: boolean | null, time?: number | null, showCountyLink?: boolean | null, pricePerSquareFoot?: number | null, event?: string | null, price?: number | null, sellerAgent?: { __typename?: 'SellerAgent', name?: string | null, profileUrl?: string | null, photo?: { __typename?: 'Photo', url?: string | null } | null } | null, attributeSource?: { __typename?: 'AttributeSource', infoString2?: string | null, infoString3?: string | null, infoString1?: string | null } | null, buyerAgent?: { __typename?: 'BuyerAgent', name?: string | null, profileUrl?: string | null, photo?: { __typename?: 'Photo', url?: string | null } | null } | null } | null> | null, schools: Array<{ __typename?: 'School', link?: string | null, rating?: number | null, totalCount?: number | null, distance?: number | null, assigned?: boolean | null, name?: string | null, studentsPerTeacher?: number | null, isAssigned?: boolean | null, size?: number | null, level?: string | null, grades?: string | null, type?: string | null } | null>, address?: { __typename?: 'Address', city?: string | null, state?: string | null, streetAddress?: string | null, zipcode?: string | null } | null, listed_by?: { __typename?: 'ListedBy', agent_reason?: number | null, zpro?: boolean | null, recent_sales?: string | null, review_count?: string | null, display_name?: string | null, badge_type?: string | null, business_name?: string | null, rating_average?: number | null, phone?: string | null, zuid?: string | null, image_url?: string | null } | null } | null };
+export type PropertyQuery = { __typename?: 'Query', property?: { __typename?: 'Property', propertyTaxRate?: number | null, solarPotential?: string | null, longitude?: number | null, countyFIPS?: string | null, cityId?: number | null, timeOnZillow?: string | null, url?: string | null, zestimate?: string | null, imgSrc?: string | null, zpid?: number | null, zipcode?: number | null, livingAreaValue?: number | null, zestimateLowPercent?: number | null, isListedByOwner?: boolean | null, propertyTypeDimension?: string | null, streetAddress?: string | null, county?: string | null, timeZone?: string | null, homeType?: string | null, livingAreaUnits?: string | null, livingArea?: number | null, bathrooms?: number | null, annualHomeownersInsurance?: number | null, state?: string | null, rentZestimate?: number | null, yearBuilt?: number | null, dateSold?: string | null, price?: number | null, description?: string | null, homeStatus?: string | null, latitude?: number | null, datePosted?: string | null, bedrooms?: number | null, monthlyHoaFee?: number | null, city?: string | null, country?: string | null, currency?: string | null, listingProvider?: { __typename?: 'ListingProvider', enhancedVideoURL?: string | null, showNoContactInfoMessage?: boolean | null, postingGroupName?: string | null, isZRMSourceText?: boolean | null, showLogos?: boolean | null, disclaimerText?: string | null, sourceText?: string | null, title?: string | null, postingWebsiteURL?: string | null, agentLicenseInt?: number | null, postingWebsiteLinkText?: string | null, enhancedDescriptionText?: string | null, agentName?: string | null } | null, contact_recipients: Array<{ __typename?: 'ContactRecipients', agent_reason?: number | null, zpro?: string | null, recent_sales?: number | null, review_count?: number | null, display_name?: string | null, zuid?: string | null, rating_average?: number | null, badge_typ?: string | null, image_url?: string | null, phone?: { __typename?: 'Phone', prefix?: string | null, areacode?: string | null, Int?: string | null } | null } | null>, resoFacts?: { __typename?: 'ResoFacts', hasAttachedProperty?: boolean | null, frontageType?: string | null, poolFeatures?: string | null, flooring?: Array<string | null> | null, accessibilityFeatures?: string | null, hasGarage?: boolean | null, hasPetsAllowed?: boolean | null, bodyType?: string | null, topography?: string | null, landLeaseExpirationDate?: string | null, hasAdditionalParcels?: boolean | null, waterViewYN?: string | null, offerReviewDate?: string | null, aboveGradeFinishedArea?: string | null, atAGlanceFacts: Array<{ __typename?: 'AtAGlance', factLabel?: string | null, factValue?: string | null } | null> } | null, mortgageRates?: { __typename?: 'MortgageRates', arm5Rate?: number | null, fifteenYearFixedRate?: number | null, thirtyYearFixedRate?: number | null } | null, nearbyHomes?: Array<{ __typename?: 'NearbyHomes', zpid?: number | null, longitude?: number | null, price?: number | null, homeType?: string | null, homeStatus?: string | null, currency?: string | null, latitude?: number | null, miniCardPhotos?: Array<{ __typename?: 'Photo', url?: string | null } | null> | null, address?: { __typename?: 'Address', city?: string | null, state?: string | null, streetAddress?: string | null, zipcode?: string | null } | null } | null> | null, priceHistory?: Array<{ __typename?: 'PriceHistory', priceChangeRate?: number | null, date?: string | null, source?: string | null, postingIsRental?: boolean | null, time?: number | null, showCountyLink?: boolean | null, pricePerSquareFoot?: number | null, event?: string | null, price?: number | null, sellerAgent?: { __typename?: 'SellerAgent', name?: string | null, profileUrl?: string | null, photo?: { __typename?: 'Photo', url?: string | null } | null } | null, attributeSource?: { __typename?: 'AttributeSource', infoString2?: string | null, infoString3?: string | null, infoString1?: string | null } | null, buyerAgent?: { __typename?: 'BuyerAgent', name?: string | null, profileUrl?: string | null, photo?: { __typename?: 'Photo', url?: string | null } | null } | null } | null> | null, schools: Array<{ __typename?: 'School', link?: string | null, rating?: number | null, totalCount?: number | null, distance?: number | null, assigned?: boolean | null, name?: string | null, studentsPerTeacher?: number | null, isAssigned?: boolean | null, size?: number | null, level?: string | null, grades?: string | null, type?: string | null } | null>, address?: { __typename?: 'Address', city?: string | null, state?: string | null, streetAddress?: string | null, zipcode?: string | null } | null, listed_by?: { __typename?: 'ListedBy', agent_reason?: number | null, zpro?: boolean | null, recent_sales?: string | null, review_count?: string | null, display_name?: string | null, badge_type?: string | null, business_name?: string | null, rating_average?: number | null, phone?: string | null, zuid?: string | null, image_url?: string | null } | null } | null };
 
 
 export const Properties_By_CoordinatesDocument = gql`
-    query Properties_by_coordinates($params: PropertiesByCoordinatesParams) {
+    query properties_by_coordinates($params: PropertiesByCoordinatesParams) {
   properties_by_coordinates(params: $params) {
     property {
       bathrooms
@@ -542,7 +542,7 @@ export type Properties_By_CoordinatesQueryHookResult = ReturnType<typeof useProp
 export type Properties_By_CoordinatesLazyQueryHookResult = ReturnType<typeof useProperties_By_CoordinatesLazyQuery>;
 export type Properties_By_CoordinatesQueryResult = Apollo.QueryResult<Properties_By_CoordinatesQuery, Properties_By_CoordinatesQueryVariables>;
 export const Properties_By_LocationDocument = gql`
-    query Properties_by_location($q: String!) {
+    query properties_by_location($q: String!) {
   properties_by_location(q: $q) {
     resultType
     results {
@@ -591,7 +591,7 @@ export type Properties_By_LocationQueryHookResult = ReturnType<typeof usePropert
 export type Properties_By_LocationLazyQueryHookResult = ReturnType<typeof useProperties_By_LocationLazyQuery>;
 export type Properties_By_LocationQueryResult = Apollo.QueryResult<Properties_By_LocationQuery, Properties_By_LocationQueryVariables>;
 export const Properties_Similar_For_SaleDocument = gql`
-    query Properties_similar_for_sale($zpid: String!) {
+    query properties_similar_for_sale($zpid: String!) {
   properties_similar_for_sale(zpid: $zpid) {
     bathrooms
     bedrooms
@@ -644,7 +644,7 @@ export type Properties_Similar_For_SaleQueryHookResult = ReturnType<typeof usePr
 export type Properties_Similar_For_SaleLazyQueryHookResult = ReturnType<typeof useProperties_Similar_For_SaleLazyQuery>;
 export type Properties_Similar_For_SaleQueryResult = Apollo.QueryResult<Properties_Similar_For_SaleQuery, Properties_Similar_For_SaleQueryVariables>;
 export const Properties_Similar_Recently_SoldDocument = gql`
-    query Properties_similar_recently_sold($zpid: String!) {
+    query properties_similar_recently_sold($zpid: String!) {
   properties_similar_recently_sold(zpid: $zpid) {
     dateSold
     bedrooms
@@ -700,7 +700,7 @@ export type Properties_Similar_Recently_SoldQueryHookResult = ReturnType<typeof 
 export type Properties_Similar_Recently_SoldLazyQueryHookResult = ReturnType<typeof useProperties_Similar_Recently_SoldLazyQuery>;
 export type Properties_Similar_Recently_SoldQueryResult = Apollo.QueryResult<Properties_Similar_Recently_SoldQuery, Properties_Similar_Recently_SoldQueryVariables>;
 export const PropertiesDocument = gql`
-    query Properties($params: PropertiesParams) {
+    query properties($params: PropertiesParams) {
   properties(params: $params) {
     props {
       bathrooms
@@ -755,7 +755,7 @@ export type PropertiesQueryHookResult = ReturnType<typeof usePropertiesQuery>;
 export type PropertiesLazyQueryHookResult = ReturnType<typeof usePropertiesLazyQuery>;
 export type PropertiesQueryResult = Apollo.QueryResult<PropertiesQuery, PropertiesQueryVariables>;
 export const Property_AssetsDocument = gql`
-    query Property_assets($zpid: String!) {
+    query property_assets($zpid: String!) {
   property_assets(zpid: $zpid) {
     images
   }
@@ -790,7 +790,7 @@ export type Property_AssetsQueryHookResult = ReturnType<typeof useProperty_Asset
 export type Property_AssetsLazyQueryHookResult = ReturnType<typeof useProperty_AssetsLazyQuery>;
 export type Property_AssetsQueryResult = Apollo.QueryResult<Property_AssetsQuery, Property_AssetsQueryVariables>;
 export const PropertyDocument = gql`
-    query Property($zpid: String!) {
+    query property($zpid: String!) {
   property(zpid: $zpid) {
     listingProvider {
       enhancedVideoURL

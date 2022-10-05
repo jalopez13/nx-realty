@@ -3,7 +3,7 @@ import { gql } from 'apollo-server-micro';
 export const typeDefs = gql`
   # Properties
 
-  type PropertiesType {
+  type PropertyType {
     zpid: String
     bathrooms: Int
     bedrooms: Int
@@ -13,7 +13,6 @@ export const typeDefs = gql`
     latitude: Float
     price: Int
     listingStatus: String
-
     livingArea: Int
     address: String
     imgSrc: String
@@ -24,7 +23,7 @@ export const typeDefs = gql`
   }
 
   type Properties {
-    props: [PropertiesType]
+    props: [PropertyType]
     resultsPerPage: Int
     totalResultCount: Int
     totalPages: Int
@@ -420,8 +419,8 @@ export const typeDefs = gql`
   }
 
   type Query {
-    properties(params: PropertiesParams): Properties
     property(zpid: String!): Property
+    properties(params: PropertiesParams): Properties
     property_assets(zpid: String!): PropertyAssets
     properties_by_coordinates(
       params: PropertiesByCoordinatesParams

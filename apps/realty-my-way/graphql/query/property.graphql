@@ -1,4 +1,4 @@
-query Property($zpid: String!) {
+query property($zpid: String!) {
   property(zpid: $zpid) {
     listingProvider {
       enhancedVideoURL
