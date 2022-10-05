@@ -1,0 +1,23 @@
+query Properties_similar_for_sale($zpid: String!) {
+  properties_similar_for_sale(zpid: $zpid) {
+    bathrooms
+    bedrooms
+    miniCardPhotos {
+      url
+    }
+    zpid
+    longitude
+    address {
+      city
+      state
+      streetAddress
+      zipcode
+    }
+    latitude
+    livingArea
+    homeType
+    livingAreaUnits
+    currency
+    price
+  }
+}

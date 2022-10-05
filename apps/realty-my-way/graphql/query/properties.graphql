@@ -1,5 +1,6 @@
 query Properties($params: PropertiesParams) {
   properties(params: $params) {
+    id
     props {
       bathrooms
       listingDateTime

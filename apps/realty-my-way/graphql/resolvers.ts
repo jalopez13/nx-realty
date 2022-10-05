@@ -2,7 +2,8 @@ import {
   fetchProperties,
   fetchPropertiesByCoordinates,
   fetchPropertiesByLocation,
-  fetchPropertiesSimilar,
+  fetchPropertiesSimilarForSale,
+  fetchPropertiesSimilarRecentlySold,
   fetchProperty,
   fetchPropertyAssets,
 } from './utils';
@@ -16,6 +17,9 @@ export const resolvers = {
       fetchPropertiesByCoordinates(args),
     properties_by_location: (_parent, args, _ctx) =>
       fetchPropertiesByLocation(args),
-    properties_similar: (_parent, args, _ctx) => fetchPropertiesSimilar(args),
+    properties_similar_for_sale: (_parent, args, _ctx) =>
+      fetchPropertiesSimilarForSale(args),
+    properties_similar_recently_sold: (_parent, args, _ctx) =>
+      fetchPropertiesSimilarRecentlySold(args),
   },
 };

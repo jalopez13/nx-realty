@@ -23,30 +23,30 @@ export const typeDefs = gql`
     hasImage: Boolean
   }
 
-  type PropertiesResults {
+  type Properties {
     props: [PropertiesType]
     resultsPerPage: Int
     totalResultCount: Int
     totalPages: Int
   }
 
-  # enum PropertiesParamsStatusType {
-  #   ForSale = "ForSale",
-  #   ForRent = "ForRent",
-  #   RecentlySold = "RecentlySold",
-  # }
+  enum PropertiesParamsStatusType {
+    ForSale
+    ForRent
+    RecentlySold
+  }
 
-  # enum DaysOnSoldInLast {
-  #   ONE = "1",
-  #   SEVEN = "7",
-  #   FOURTEEN = "14",
-  #   THIRTY = "30",
-  #   NINTY = "90",
-  #   SIXMONTHS = "6m",
-  #   TWELVEMONTHS = "12m",
-  #   TWENTYFOURMONTHS = "24m",
-  #   THIRTYSIXMONTHS = "36m",
-  # }
+  enum DaysOnSoldInLast {
+    ONEDAYS
+    SEVENDAYS
+    FOURTEENDAYS
+    THIRTYDAYS
+    NINTYDAYS
+    SIXMONTHS
+    TWELVEMONTHS
+    TWENTYFOURMONTHS
+    THIRTYSIXMONTHS
+  }
 
   input PropertiesParams {
     # REQUIRED: Location details, address, county, neighborhood or Zip code.
@@ -281,7 +281,7 @@ export const typeDefs = gql`
     image_url: String
   }
 
-  type PropertyResults {
+  type Property {
     listingProvider: ListingProvider
     propertyTaxRate: Float
     contact_recipients: [ContactRecipients]!
@@ -331,7 +331,7 @@ export const typeDefs = gql`
   }
 
   # Property Images and videos
-  type PropertyAssetsResults {
+  type PropertyAssets {
     images: [String]!
   }
 
@@ -379,13 +379,13 @@ export const typeDefs = gql`
     metaData: PropertiesByLocationMetaData
   }
 
-  type PropertiesByLocationResults {
+  type PropertiesByLocation {
     resultType: String!
     results: [PropertiesbyLocationProperty]
   }
 
-  # properties similar
-  type PropertySimilarResults {
+  # properties similar for sale
+  type PropertySimilarForSale {
     bathrooms: Int
     bedrooms: Int
     miniCardPhotos: [Photo]
@@ -400,14 +400,36 @@ export const typeDefs = gql`
     price: Int
   }
 
+  # properties similar recently sold
+  type PropertySimilarRecentlySold {
+    dateSold: Int
+    bedrooms: Int
+    homeStatus: String
+    latitude: Float
+    miniCardPhotos: [Photo]
+    zpid: Int
+    longitude: Float
+    bathrooms: Int
+    address: Address
+    livingArea: Int
+    livingAreaUnits: String
+    homeType: String
+    currency: String
+    lastSoldPrice: Int
+    price: Int
+  }
+
   type Query {
-    properties(params: PropertiesParams): PropertiesResults
-    property(zpid: String!): PropertyResults
-    property_assets(zpid: String!): PropertyAssetsResults
+    properties(params: PropertiesParams): Properties
+    property(zpid: String!): Property
+    property_assets(zpid: String!): PropertyAssets
     properties_by_coordinates(
       params: PropertiesByCoordinatesParams
     ): [PropertyByCoordinates]!
-    properties_by_location(q: String!): PropertiesByLocationResults
-    properties_similar(zpid: String!): [PropertySimilarResults]!
+    properties_by_location(q: String!): PropertiesByLocation
+    properties_similar_for_sale(zpid: String!): [PropertySimilarForSale]!
+    properties_similar_recently_sold(
+      zpid: String!
+    ): [PropertySimilarRecentlySold]!
   }
 `;

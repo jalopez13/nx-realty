@@ -1,19 +1,26 @@
-import { useQuery } from '@apollo/client';
+// import { useQuery } from '@apollo/client';
 import { BaseLayout } from '@nx-realty/shared/ui';
 import { GetStaticPropsContext } from 'next';
 import { ReactElement } from 'react';
 import { initializeApollo } from '../graphql/apollo-client';
-import { PropertiesDocument } from '../graphql/generated';
+import { PropertiesDocument, usePropertiesQuery } from '../graphql/generated';
 import type { NextPageWithLayout } from './_app';
 
-const MAIN_QUERY = PropertiesDocument;
-
 const SSR: NextPageWithLayout = () => {
-  const { loading, error, data } = useQuery(MAIN_QUERY);
+  const { loading, error, data } = usePropertiesQuery({
+    variables: {
+      params: {
+        location: 'stevenson ranch, ca',
+        home_type: 'Houses',
+      },
+    },
+  });
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Opps: {error.message}</div>;
   if (!data) return <div>Error loading data from server.</div>;
+
+  console.log('data: ', data);
 
   return (
     <>
@@ -28,7 +35,13 @@ export async function getServerSideProps(context: GetStaticPropsContext) {
   const apolloClient = initializeApollo();
 
   await apolloClient.query({
-    query: MAIN_QUERY,
+    query: PropertiesDocument,
+    variables: {
+      params: {
+        location: 'stevenson ranch, ca',
+        home_type: 'Houses',
+      },
+    },
   });
 
   return {

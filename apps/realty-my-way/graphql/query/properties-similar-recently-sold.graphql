@@ -1,0 +1,26 @@
+query Properties_similar_recently_sold($zpid: String!) {
+  properties_similar_recently_sold(zpid: $zpid) {
+    dateSold
+    bedrooms
+    homeStatus
+    latitude
+    miniCardPhotos {
+      url
+    }
+    zpid
+    longitude
+    bathrooms
+    address {
+      city
+      state
+      streetAddress
+      zipcode
+    }
+    livingArea
+    livingAreaUnits
+    homeType
+    currency
+    lastSoldPrice
+    price
+  }
+}
