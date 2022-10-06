@@ -1,11 +1,17 @@
-import { ApolloClient, InMemoryCache } from '@apollo/client';
+import {
+  ApolloClient,
+  InMemoryCache,
+  NormalizedCacheObject,
+} from '@apollo/client';
 import { HttpLink } from '@apollo/client/link/http';
 import { SchemaLink } from '@apollo/client/link/schema';
 import merge from 'deepmerge';
 import { useMemo } from 'react';
 import { schema } from './schema';
 
-let apolloClient;
+export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE__';
+
+let apolloClient: ApolloClient<NormalizedCacheObject> | undefined;
 
 function createIsomorphLink() {
   if (typeof window === 'undefined') {
@@ -38,7 +44,9 @@ function createApolloClient() {
   });
 }
 
-export function initializeApollo(initialState = null) {
+export function initializeApollo(
+  initialState: NormalizedCacheObject | null = null
+) {
   const _apolloClient = apolloClient ?? createApolloClient();
 
   // If your page has Next.js data fetching methods that use Apollo Client, the initial state
@@ -59,6 +67,18 @@ export function initializeApollo(initialState = null) {
   if (!apolloClient) apolloClient = _apolloClient;
 
   return _apolloClient;
+}
+
+export function addApolloState(
+  client: ApolloClient<NormalizedCacheObject>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  pageProps: any
+) {
+  if (pageProps?.props) {
+    pageProps.props[APOLLO_STATE_PROP_NAME] = client.cache.extract();
+  }
+
+  return pageProps;
 }
 
 export function useApollo(initialState) {

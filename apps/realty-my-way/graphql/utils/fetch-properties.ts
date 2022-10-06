@@ -15,10 +15,10 @@ export const fetchProperties = async (params) => {
     const response = await axios.request(options);
     const data = await response.data;
 
-    if (process.env.NODE_ENV !== 'production') {
-      console.log('PASSED PARAMS: ', params.params);
-      console.log('FETCH PROPERTIES DATA: ', data);
-    }
+    // if (process.env.NODE_ENV !== 'production') {
+    //   console.log('PASSED PARAMS: ', params.params);
+    //   console.log('FETCH PROPERTIES DATA: ', data);
+    // }
 
     return data;
   } catch (err) {
