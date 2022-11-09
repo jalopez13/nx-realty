@@ -4,7 +4,7 @@ const { join } = require('path');
 module.exports = {
   presets: [
     require('../../tailwind-workspace-preset.js'),
-    require('../../theme/realty-my-way.js'),
+    require('../../theme/realtymyway.js'),
   ],
   content: [
     join(process.cwd(), 'pages/**/*.{js,ts,jsx,tsx}'),

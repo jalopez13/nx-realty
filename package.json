@@ -7,7 +7,7 @@
     "build": "nx build",
     "test": "nx test",
     "prepare": "husky install",
-    "generate-types:realty-my-way": "graphql-codegen --config ./apps/realty-my-way/codegen.ts"
+    "generate-types:realtymyway": "graphql-codegen --config ./apps/realtymyway/codegen.ts"
   },
   "private": true,
   "dependencies": {

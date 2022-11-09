@@ -3,9 +3,9 @@ import type { CodegenConfig } from '@graphql-codegen/cli';
 const config: CodegenConfig = {
   overwrite: true,
   schema: 'http://localhost:4200/api/graphql',
-  documents: 'apps/realty-my-way/graphql/**/*.graphql',
+  documents: 'apps/realtymyway/graphql/**/*.graphql',
   generates: {
-    'apps/realty-my-way/graphql/generated.tsx': {
+    'apps/realtymyway/graphql/generated.tsx': {
       plugins: [
         'typescript',
         'typescript-operations',

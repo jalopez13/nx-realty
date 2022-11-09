@@ -1,7 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  presets: [require('../theme/preset.js')],
+  presets: [require('./preset.js')],
   theme: {
     ...defaultTheme.colors,
     extend: {

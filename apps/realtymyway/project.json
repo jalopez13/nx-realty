@@ -1,17 +1,17 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/realty-my-way",
+  "sourceRoot": "apps/realtymyway",
   "projectType": "application",
   "targets": {
     "build": {
       "executor": "@nrwl/next:build",
       "outputs": [
-        "dist/apps/realty-my-way"
+        "dist/apps/realtymyway"
       ],
       "defaultConfiguration": "production",
       "options": {
-        "root": "apps/realty-my-way",
-        "outputPath": "dist/apps/realty-my-way",
+        "root": "apps/realtymyway",
+        "outputPath": "dist/apps/realtymyway",
         "assets": [
           {
             "input": "libs/shared/assets/src/svgs/",
@@ -27,7 +27,7 @@
       },
       "configurations": {
         "development": {
-          "outputPath": "apps/realty-my-way"
+          "outputPath": "apps/realtymyway"
         },
         "production": {}
       }
@@ -36,7 +36,7 @@
       "executor": "@nrwl/next:server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "realty-my-way:build",
+        "buildTarget": "realtymyway:build",
         "dev": true,
         "assets": [
           {
@@ -53,11 +53,11 @@
       },
       "configurations": {
         "development": {
-          "buildTarget": "realty-my-way:build:development",
+          "buildTarget": "realtymyway:build:development",
           "dev": true
         },
         "production": {
-          "buildTarget": "realty-my-way:build:production",
+          "buildTarget": "realtymyway:build:production",
           "dev": false
         }
       }
@@ -65,16 +65,16 @@
     "export": {
       "executor": "@nrwl/next:export",
       "options": {
-        "buildTarget": "realty-my-way:build:production"
+        "buildTarget": "realtymyway:build:production"
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": [
-        "coverage/apps/realty-my-way"
+        "coverage/apps/realtymyway"
       ],
       "options": {
-        "jestConfig": "apps/realty-my-way/jest.config.ts",
+        "jestConfig": "apps/realtymyway/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -85,12 +85,12 @@
       ],
       "options": {
         "lintFilePatterns": [
-          "apps/realty-my-way/**/*.{ts,tsx,js,jsx}"
+          "apps/realtymyway/**/*.{ts,tsx,js,jsx}"
         ]
       }
     }
   },
   "tags": [
-    "type:app"
+    "scope:app"
   ]
 }
