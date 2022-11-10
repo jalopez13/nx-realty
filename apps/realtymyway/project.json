@@ -1,4 +1,5 @@
 {
+  "name": "realtymyway",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/realtymyway",
   "projectType": "application",
@@ -6,7 +7,7 @@
     "build": {
       "executor": "@nrwl/next:build",
       "outputs": [
-        "dist/apps/realtymyway"
+        "{workspaceRoot}/dist/apps/realtymyway"
       ],
       "defaultConfiguration": "production",
       "options": {
@@ -71,7 +72,7 @@
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": [
-        "coverage/apps/realtymyway"
+        "{workspaceRoot}/coverage/apps/realtymyway"
       ],
       "options": {
         "jestConfig": "apps/realtymyway/jest.config.ts",
