@@ -7,7 +7,10 @@ module.exports = {
     require('../../theme/realtymyway.js'),
   ],
   content: [
-    join(process.cwd(), 'pages/**/*.{js,ts,jsx,tsx}'),
+    join(
+      __dirname,
+      '{src,pages,app,components}/**/*!(*.stories|*.spec).{ts,tsx,html}'
+    ),
     ...createGlobPatternsForDependencies(__dirname),
   ],
   darkMode: 'class', // or 'media' or 'class'

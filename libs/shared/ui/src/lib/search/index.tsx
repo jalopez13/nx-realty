@@ -3,29 +3,23 @@ export interface ISearch {}
 
 export const Search = (props: ISearch) => {
   return (
-    <form className="max-w-[800px] mx-auto px-4">
+    <form className="w-full max-w-[1000px] mx-auto px-4 bg-black/60 pt-4 pb-6 pl-6 pr-6 rounded-lg text-white">
       <div className="py-4">
         <div className="flex gap-4">
           <a
             href="/"
-            className="search-link search-link-active dark:text-white text-white/70 hover:text-white hover:underline hover:underline-offset-4"
-            aria-label="search buy link"
+            className="search-link search-link-active dark:text-white  hover:text-white hover:underline hover:underline-offset-4"
+            aria-label="search buy link text-lg"
           >
             Buy
           </a>
-          <a
-            href="/rent"
-            className="search-link text-white/70 hover:text-white hover:underline hover:underline-offset-4"
-            aria-label="search rent link"
-          >
-            Rent
-          </a>
+
           <a
             href="/recently-sold"
-            className="search-link text-white/70 hover:text-white hover:underline hover:underline-offset-4"
-            aria-label="search recently sold link"
+            className="search-link  hover:text-white hover:underline hover:underline-offset-4"
+            aria-label="search recently sold link text-lg"
           >
-            Recently Sold
+            Sell
           </a>
         </div>
       </div>
@@ -51,13 +45,13 @@ export const Search = (props: ISearch) => {
         <input
           type="search"
           id="default-search"
-          className="block p-4 pl-10 w-full text-sm rounded-lg border-gray-600/20 border-4 text-brand-dark bg-brand-light/90  placeholder-brand-dark/70 outline-brand font-semibold"
+          className="block p-4 pl-10 w-full text-sm rounded-lg border-gray-600/20 border-4 text-brand-dark bg-brand-light/90  placeholder-brand-dark/70 outline-brand font-semibold text-slate-700"
           placeholder="Enter an address, city or zip..."
           required
         />
         <button
           type="submit"
-          className="absolute shadow right-2.5 bottom-2.5 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 duration-500 text-brand-light bg-brand-dark"
+          className="absolute shadow right-2.5 bottom-2.5 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 duration-500 text-white bg-slate-700"
         >
           Search
         </button>

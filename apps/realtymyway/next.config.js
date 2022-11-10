@@ -19,6 +19,7 @@ const nextConfig = {
   images: {
     domains: ['cdn.britannica.com', 'flowbite.com'],
   },
+  experimental: { appDir: true },
 };
 
 module.exports = withNx(withBundleAnalyzer(nextConfig));
