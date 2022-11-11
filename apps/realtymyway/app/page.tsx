@@ -1,4 +1,5 @@
-import { Hero } from '@nx-realty/shared/ui';
+import { Hero } from "./components";
+
 const HomePage = () => {
   return (
     <div className="h-screen text-white drop-shadow-lg">
@@ -6,8 +7,8 @@ const HomePage = () => {
         image="/assets/images/homes.jpg"
         imageAlt="Home Image"
         title="We Make Finding That Dream Home A Breeze"
-        subTitle={`Search for homes to buy or rent in your neaighborhood and see how
-        easy it is with RealtyMyWay`}
+        subTitle="Search homes for sell in your neaighborhood and see how
+        easy it is with "
       />
     </div>
   );

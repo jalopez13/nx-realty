@@ -1,0 +1,75 @@
+/* These colors are used in the presets file */
+:root {
+  /* App background */
+  --light-background: #f5f5f5;
+  --dark-background: #27292d;
+
+  /* Base */
+  --light-base: #000;
+  --dark-base: #f3f3f3;
+
+  /* Container */
+  --light-container-background: #fff;
+  --dark-container-background: #1f2023;
+
+  /* Footer */
+  --light-footer-background: #1e3774;
+  --dark-footer-background: #1f2023;
+
+  /* Links */
+  --light-link: #256295;
+  --dark-link: #e8e8e8;
+  --light-link-secondary: #256295;
+  --dark-link-secondary: #476ed1;
+
+  /* Overflow */
+  --light-overflow: #e4e4e4;
+  --dark-overflow: #111111;
+  
+  --light-primarynav-background: #fbc318;
+  --dark-primarynav-background: #000000;
+
+  /* Subtext */
+  --light-subtext: #666;
+  --dark-subtext: #999;
+
+  /* Text */
+  --light-text: #000;
+  --dark-text: #e8e8e8;
+
+  /* static colors to mitigate auto updates */
+  --staticWhite: #fff;
+  --staticBlack: #000;
+}
+
+/* Light mode colors */
+html {
+  --background: var(--light-background);
+  --link: var(--light-link);
+  --link-secondary: var(--light-link-secondary);
+  --container: var(--light-container-background);
+  --subtext: var(--light-subtext);
+  --primarynav-background: var(--light-primarynav-background);
+  --overflow: var(--light-overflow);
+  --base: var(--light-base);
+  --footer-background: var(--light-footer-background);
+  --static-white: var(--staticWhite);
+  --static-black: var(--staticBlack);
+  --primary-text: var(--light-text);
+}
+
+/* Dark mode colors */
+html[data-theme='dark'] {
+  --background: var(--dark-background);
+  --link: var(--dark-link);
+  --link-secondary: var(--dark-link-secondary);
+  --container: var(--dark-container-background);
+  --subtext: var(--dark-subtext);
+  --primarynav-background: var(--dark-primarynav-background);
+  --overflow: var(--dark-overflow);
+  --base: var(--dark-base);
+  --footer-background: var(--dark-footer-background);
+  --static-white: var(--staticWhite);
+  --static-black: var(--staticBlack);
+  --primary-text: var(--dark-text);
+}
