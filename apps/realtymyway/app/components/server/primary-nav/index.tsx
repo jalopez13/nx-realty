@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { FaHome } from "react-icons/fa";
 
@@ -30,7 +28,7 @@ export const PrimaryNav = () => {
         <li>
           <Link
             href="/mortgage"
-            className="text-app-white bg-app-accent rounded py-2 px-6"
+            className="text-app-white bg-app-accent hover:bg-app-secondary hover:text-app-white rounded py-2 px-6 transition-color duration-700"
           >
             Mortgages
           </Link>

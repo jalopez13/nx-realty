@@ -1,3 +1,5 @@
+"use client";
+
 export const Search = () => {
   return (
     <form className="flex items-center w-5/12 bg-app-white rounded p-2 text-4xl">

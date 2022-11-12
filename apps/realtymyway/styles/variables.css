@@ -5,9 +5,9 @@
   --app-secondary-color: #8792FF;
   --app-accent-color: #33963F;
   --app-accent-secondary-color: #266c2e;
-  --app-text-color: #14183D;
+  --app-text-color: #1e293b;
   --app-bg-color: #ffffff;
-  --app-heading-color: #1E245C;
+  --app-heading-color: #334155;
   --app-link-color: #828DF5; /* link-color:  change currently set to --secondary-color */
   --app-white-color: #ffffff;
   --app-black-color: #000000;
@@ -20,7 +20,7 @@ html {
   --app-secondary: var(--app-secondary-color);
   --app-accent: var(--app-accent-color);
   --app-accent-secondary: var(--app-accent-secondary-color);
-  --app-text: var(--app-text-app-color);
+  --app-text: var(--app-text-color);
   --app-background: var(--app-bg-color);
   --app-heading: var(--app-heading-color);
   --app-link: var(var(--app-link-color));

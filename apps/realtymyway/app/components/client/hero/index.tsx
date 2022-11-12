@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Search } from "../search";
+import HUICombobox from "../headless-ui/combobox";
+// import { Search } from "../search";
 
 export type HeroProps = {
   image: string,
@@ -34,7 +35,10 @@ export const Hero = ({ image, imageAlt, title, subTitle }: HeroProps) => {
             {subTitle} <strong className="text-secondary">RealtyMyWay.</strong>
           </p>
         </div>
-        <Search />
+
+        {/* <Search /> */}
+
+        <HUICombobox />
       </div>
     </section>
   );

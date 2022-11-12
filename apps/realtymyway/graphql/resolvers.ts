@@ -6,7 +6,7 @@ import {
   fetchPropertiesSimilarRecentlySold,
   fetchProperty,
   fetchPropertyAssets,
-} from './utils';
+} from "./utils";
 
 export const resolvers = {
   Query: {
