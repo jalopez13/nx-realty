@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { Footer, Header } from "./components";
-import "./globals.css";
+
+import "../styles/globals.css";
 
 export interface HomepageProps {
   children: ReactNode;
@@ -9,7 +10,7 @@ export interface HomepageProps {
 const RootLayout = ({ children }: HomepageProps) => {
   return (
     <html lang="en">
-      <body className="text-gray-900 bg-white">
+      <body className="text-text bg-background">
         <div>
           <Header />
           <section>

@@ -3,15 +3,13 @@
 import Link from "next/link";
 import { FaHome } from "react-icons/fa";
 
-const linkstyles = "hover:text-green-600";
-
 export const PrimaryNav = () => {
   return (
     <nav className="primary-nav flex flex-row justify-between items-center font-semibold">
       <div>
         <a href="/" className="flex justify-center items-center mb-4 sm:mb-0">
           <div className="mr-4 h-8 relative">
-            <FaHome className="w-full h-full text-green-600" />
+            <FaHome className="w-full h-full text-app-accent" />
           </div>
 
           <span className="text-2xl font-semibold pt-1">RealtyMyWay</span>
@@ -20,20 +18,21 @@ export const PrimaryNav = () => {
 
       <ul className="flex flex-row justify-center items-center space-x-6">
         <li>
-          <Link href="/buy" className={`${linkstyles}`}>
-            Buy
+          <Link href="/buy" className="text-app-text hover:text-app-accent">
+            Find Homes For Sell in Stevenson Ranch, CA
           </Link>
         </li>
 
         <li>
-          <Link href="/sell" className={`${linkstyles}`}>
-            Sell
-          </Link>
+          <p>|</p>
         </li>
 
         <li>
-          <Link href="/mortgage" className={`${linkstyles}`}>
-            Mortgage
+          <Link
+            href="/mortgage"
+            className="text-app-white bg-app-accent rounded py-2 px-6"
+          >
+            Mortgages
           </Link>
         </li>
       </ul>

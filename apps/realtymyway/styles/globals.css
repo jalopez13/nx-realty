@@ -1,14 +1,27 @@
-/* tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import './base.css';
-@import './components.css';
-@import './utilities.css';
-
-/* radix */
-
-@import './alert-dialog.css';
+@import 'variables.css';
 
 
+.typing-text {
+  width: 30ch;
+  animation: typing 2s steps(30), blink .5s step-end infinite alternate;
+  animation-delay: 2s;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+}
 
-
-
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}

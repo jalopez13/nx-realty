@@ -1,37 +1,31 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   theme: {
     screens: {
-      sm: '900px',
-      md: '1024px',
-      lg: '1200px',
-      xl: '1260px',
+      sm: "900px",
+      md: "1024px",
+      lg: "1200px",
+      xl: "1260px",
     },
     container: {
       center: true,
-      padding: {
-        DEFAULT: '1rem',
-        sm: '2rem',
-        lg: '4rem',
-        xl: '5rem',
-        '2xl': '6rem',
+    },
+    extend: {
+      colors: {
+        ...defaultTheme.colors,
+        "app-primary": "var(--app-primary)",
+        "app-secondary": "var(--app-secondary)",
+        "app-text": "var(--app-text)",
+        "app-accent": "var(--app-accent)",
+        "app-accent-secondary": "var(--app-accent-secondary)",
+        "app-background": "var(--app-background)",
+        "app-heading": "var(--app-heading)",
+        "app-link": "var(--app-link)",
+        "app-white": "var(--app-white)",
+        "app-black": "var(--app-black)",
+        "app-font-stack": "var(--app-font-stack)",
       },
     },
-    // colors: {
-    //   background: 'var(--background)',
-    //   base: 'var(--base)',
-    //   container: 'var(--container)',
-    //   footerBackground: 'var(--footer-background)',
-    //   link: 'var(--link)',
-    //   linkSecondary: 'var(--link-secondary)',
-    //   overflow: 'var(--overflow)',
-    //   ratingIconFilled: 'var(--rating-icon-filled)',
-    //   ratingIcon: 'var(--rating-icon)',
-    //   subText: 'var(--subtext)',
-    //   superNavBackground: 'var(--supernav-background)',
-    //   primaryText: 'var(--primary-text)',
-    //   /* static colors */
-    //   staticWhite: 'var(--static-white)',
-    //   staticBlack: 'var(--static-black)',
-    // },
   },
 };

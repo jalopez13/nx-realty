@@ -1,75 +1,45 @@
-/* These colors are used in the presets file */
+/* GLOBAL VARIABLES: These variables are used in the preset.  */
+
 :root {
-  /* App background */
-  --light-background: #f5f5f5;
-  --dark-background: #27292d;
-
-  /* Base */
-  --light-base: #000;
-  --dark-base: #f3f3f3;
-
-  /* Container */
-  --light-container-background: #fff;
-  --dark-container-background: #1f2023;
-
-  /* Footer */
-  --light-footer-background: #1e3774;
-  --dark-footer-background: #1f2023;
-
-  /* Links */
-  --light-link: #256295;
-  --dark-link: #e8e8e8;
-  --light-link-secondary: #256295;
-  --dark-link-secondary: #476ed1;
-
-  /* Overflow */
-  --light-overflow: #e4e4e4;
-  --dark-overflow: #111111;
-  
-  --light-primarynav-background: #fbc318;
-  --dark-primarynav-background: #000000;
-
-  /* Subtext */
-  --light-subtext: #666;
-  --dark-subtext: #999;
-
-  /* Text */
-  --light-text: #000;
-  --dark-text: #e8e8e8;
-
-  /* static colors to mitigate auto updates */
-  --staticWhite: #fff;
-  --staticBlack: #000;
+  --app-primary-color: #3944AD;
+  --app-secondary-color: #8792FF;
+  --app-accent-color: #33963F;
+  --app-accent-secondary-color: #266c2e;
+  --app-text-color: #14183D;
+  --app-bg-color: #ffffff;
+  --app-heading-color: #1E245C;
+  --app-link-color: #828DF5; /* link-color:  change currently set to --secondary-color */
+  --app-white-color: #ffffff;
+  --app-black-color: #000000;
+  --app-font-stack: 'Roboto', Helvetica, sans-serif;
 }
 
 /* Light mode colors */
 html {
-  --background: var(--light-background);
-  --link: var(--light-link);
-  --link-secondary: var(--light-link-secondary);
-  --container: var(--light-container-background);
-  --subtext: var(--light-subtext);
-  --primarynav-background: var(--light-primarynav-background);
-  --overflow: var(--light-overflow);
-  --base: var(--light-base);
-  --footer-background: var(--light-footer-background);
-  --static-white: var(--staticWhite);
-  --static-black: var(--staticBlack);
-  --primary-text: var(--light-text);
+  --app-primary: var(--app-primary-color);
+  --app-secondary: var(--app-secondary-color);
+  --app-accent: var(--app-accent-color);
+  --app-accent-secondary: var(--app-accent-secondary-color);
+  --app-text: var(--app-text-app-color);
+  --app-background: var(--app-bg-color);
+  --app-heading: var(--app-heading-color);
+  --app-link: var(var(--app-link-color));
+  --app-white: var(--app-white-color);
+  --app-black: var(--app-black-color);
+  --app-stack: var(--app-font-stack);
 }
 
 /* Dark mode colors */
 html[data-theme='dark'] {
-  --background: var(--dark-background);
-  --link: var(--dark-link);
-  --link-secondary: var(--dark-link-secondary);
-  --container: var(--dark-container-background);
-  --subtext: var(--dark-subtext);
-  --primarynav-background: var(--dark-primarynav-background);
-  --overflow: var(--dark-overflow);
-  --base: var(--dark-base);
-  --footer-background: var(--dark-footer-background);
-  --static-white: var(--staticWhite);
-  --static-black: var(--staticBlack);
-  --primary-text: var(--dark-text);
+  --app-primary: var(--app-primary-color);
+  --app-secondary: var(--app-secondary-color);
+  --app-accent: var(--app-accent-color);
+  --app-accent-secondary: var(--app-accent-secondary-color);
+  --app-text: var(--app-text-color);
+  --app-background: var(--app-bg-color);
+  --app-heading: var(--app-heading-color);
+  --app-link: var(var(--app-link-color));
+  --app-white: var(--app-white-color);
+  --app-black: var(--app-black-color);
+  --app-stack: var(--app-font-stack);
 }
