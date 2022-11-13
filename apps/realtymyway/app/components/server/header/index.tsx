@@ -2,7 +2,7 @@ import PrimaryNav from "../primary-nav";
 
 export const Header = () => {
   return (
-    <header className="fixed inset-0 border-b border-slate-200 shadow-md py-3 px-8 bg-white w-full max-h-16 z-10">
+    <header className="fixed inset-0 border-b border-gray-200 shadow-lg py-3 px-9 bg-white w-full max-h-16 z-10">
       <PrimaryNav />
     </header>
   );

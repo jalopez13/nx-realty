@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FaHome } from "react-icons/fa";
+import { HiMenuAlt3 } from "react-icons/hi";
 
 export const PrimaryNav = () => {
   return (
@@ -14,10 +15,26 @@ export const PrimaryNav = () => {
         </a>
       </div>
 
-      <ul className="flex flex-row justify-center items-center space-x-6">
+      <button className="absolute top-4 right-8 lg:hidden">
+        <HiMenuAlt3 className="text-4xl" />
+      </button>
+
+      <ul className="hidden space-x-6 lg:flex lg:flex-row lg:justify-center lg:items-center">
         <li>
-          <Link href="/buy" className="text-app-text hover:text-app-accent">
-            Find Homes For Sell in Stevenson Ranch, CA
+          <Link
+            href="/for-sell"
+            className="text-app-text hover:text-app-accent"
+          >
+            For Sell
+          </Link>
+        </li>
+
+        <li>
+          <Link
+            href="/for-rent"
+            className="text-app-text hover:text-app-accent"
+          >
+            For Rent
           </Link>
         </li>
 
@@ -27,8 +44,8 @@ export const PrimaryNav = () => {
 
         <li>
           <Link
-            href="/mortgage"
-            className="text-app-white bg-app-accent hover:bg-app-secondary hover:text-app-white rounded py-2 px-6 transition-color duration-700"
+            href="/"
+            className="text-app-white bg-app-accent rounded py-2 px-6 transition-color duration-700 border border-gray-200 hover:bg-app-accent-secondary hover:text-app-white leading-none font-semibold "
           >
             Mortgages
           </Link>

@@ -1,14 +1,14 @@
 /* GLOBAL VARIABLES: These variables are used in the preset.  */
 
 :root {
-  --app-primary-color: #3944AD;
-  --app-secondary-color: #8792FF;
-  --app-accent-color: #33963F;
-  --app-accent-secondary-color: #266c2e;
+  --app-primary-color: #f8fafc;
+  --app-secondary-color: #0f766e;
+  --app-accent-color: #14b8a6;
+  --app-accent-secondary-color: #0f766e; 
   --app-text-color: #1e293b;
-  --app-bg-color: #ffffff;
+  --app-bg-color: #fcfcfc;
   --app-heading-color: #334155;
-  --app-link-color: #828DF5; /* link-color:  change currently set to --secondary-color */
+  --app-link-color: --app-accent-color; /* link-color:  change currently set to --secondary-color */
   --app-white-color: #ffffff;
   --app-black-color: #000000;
   --app-font-stack: 'Roboto', Helvetica, sans-serif;

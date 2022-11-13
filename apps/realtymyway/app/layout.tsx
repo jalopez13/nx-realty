@@ -10,11 +10,16 @@ export interface HomepageProps {
 const RootLayout = ({ children }: HomepageProps) => {
   return (
     <html lang="en">
-      <body className="text-text bg-background">
-        <div>
+      <body className="text-app-text bg-app-background">
+        <div className="overflow-hidden">
           <Header />
           <section>
-            <main className="mt-[64px]">{children}</main>
+            <main
+              className="mt-[64px]"
+              style={{ minHeight: "calc(100vh - 238px)" }}
+            >
+              {children}
+            </main>
           </section>
           <Footer />
         </div>

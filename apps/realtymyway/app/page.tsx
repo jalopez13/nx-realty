@@ -2,7 +2,7 @@ import { Hero } from "./components/client";
 
 const HomePage = () => {
   return (
-    <div className="h-screen text-white drop-shadow-lg">
+    <>
       <Hero
         image="/assets/images/homes.jpg"
         imageAlt="Home Image"
@@ -10,7 +10,7 @@ const HomePage = () => {
         subTitle="Search homes for sell in your neaighborhood and see how
         easy it is with "
       />
-    </div>
+    </>
   );
 };
 

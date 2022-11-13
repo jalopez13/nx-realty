@@ -2,12 +2,6 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   theme: {
-    screens: {
-      sm: "900px",
-      md: "1024px",
-      lg: "1200px",
-      xl: "1260px",
-    },
     container: {
       center: true,
     },
