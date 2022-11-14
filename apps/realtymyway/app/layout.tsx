@@ -1,5 +1,5 @@
+import { Footer, Header } from "@nx-realty/shared/ui";
 import { ReactNode } from "react";
-import { Footer, Header } from "./components/client";
 
 import "../styles/globals.css";
 

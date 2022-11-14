@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { FaHome } from "react-icons/fa";
 import { HiMenuAlt3 } from "react-icons/hi";

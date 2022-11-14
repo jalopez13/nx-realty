@@ -47,6 +47,12 @@
         "^production",
         "{workspaceRoot}/.storybook/**/*"
       ]
+    },
+    "e2e": {
+      "inputs": [
+        "default",
+        "^production"
+      ]
     }
   },
   "generators": {

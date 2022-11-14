@@ -4,8 +4,7 @@
     "outDir": "../../../dist/out-tsc",
     "types": [
       "node"
-    ],
-    "composite": false
+    ]
   },
   "files": [
     "../../../node_modules/@nrwl/react/typings/cssmodule.d.ts",
@@ -20,11 +19,7 @@
     "**/*.spec.js",
     "**/*.test.js",
     "**/*.spec.jsx",
-    "**/*.test.jsx",
-    "**/*.stories.ts",
-    "**/*.stories.js",
-    "**/*.stories.jsx",
-    "**/*.stories.tsx"
+    "**/*.test.jsx"
   ],
   "include": [
     "**/*.js",

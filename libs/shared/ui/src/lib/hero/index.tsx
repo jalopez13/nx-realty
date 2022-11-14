@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HUICombobox from "../headless-ui/combobox";
+// import HUICombobox from "../headless-ui/combobox";
 
 export type HeroProps = {
   image: string,
@@ -31,7 +31,7 @@ export const Hero = ({ image, imageAlt, title, subTitle }: HeroProps) => {
           </h3>
         </div>
 
-        <HUICombobox />
+        {/* <HUICombobox /> */}
       </div>
 
       <div

@@ -1,25 +1,23 @@
-"use client ";
-
 import { Combobox } from "@headlessui/react";
-import { use, useState } from "react";
-import { initializeApollo } from "../../../../../graphql/apollo-client";
-import { Properties_By_LocationDocument } from "../../../../../graphql/generated";
+import { useState } from "react";
+// import { initializeApollo } from "../../../../../graphql/apollo-client";
+// import { Properties_By_LocationDocument } from "../../../../../graphql/generated";
 
-const getSuggestions = async () => {
-  const apolloClient = initializeApollo();
+// const getSuggestions = async () => {
+//   const apolloClient = initializeApollo();
 
-  const { data } = await apolloClient.query({
-    query: Properties_By_LocationDocument,
-    variables: {
-      q: "los",
-    },
-    fetchPolicy: "no-cache",
-  });
+//   const { data } = await apolloClient.query({
+//     query: Properties_By_LocationDocument,
+//     variables: {
+//       q: "los",
+//     },
+//     fetchPolicy: "no-cache",
+//   });
 
-  return data.properties_by_location.results;
-};
+//   return data.properties_by_location.results;
+// };
 
-const dataPromise = getSuggestions();
+// const dataPromise = getSuggestions();
 
 export const revalidate = 1500;
 

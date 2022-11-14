@@ -1,4 +1,4 @@
-import { Hero } from "./components/client";
+import { Hero } from "@nx-realty/shared/ui";
 
 const HomePage = () => {
   return (
