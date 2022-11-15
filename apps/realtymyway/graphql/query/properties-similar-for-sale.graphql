@@ -1,4 +1,4 @@
-query properties_similar_for_sale($zpid: String!) {
+query PropertiesSimilarForSale($zpid: String!) {
   properties_similar_for_sale(zpid: $zpid) {
     bathrooms
     bedrooms

@@ -1,5 +1,6 @@
-import { Footer, Header } from "@nx-realty/shared/ui";
 import { ReactNode } from "react";
+import { Footer } from "./components/footer";
+import { Header } from "./components/header";
 
 import "../styles/globals.css";
 
@@ -11,18 +12,11 @@ const RootLayout = ({ children }: HomepageProps) => {
   return (
     <html lang="en">
       <body className="text-app-text bg-app-background">
-        <div className="overflow-hidden">
-          <Header />
-          <section>
-            <main
-              className="mt-[64px]"
-              style={{ minHeight: "calc(100vh - 238px)" }}
-            >
-              {children}
-            </main>
-          </section>
-          <Footer />
-        </div>
+        <Header />
+        <section>
+          <main className="mt-[64px]">{children}</main>
+        </section>
+        <Footer />
       </body>
     </html>
   );

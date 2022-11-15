@@ -2,24 +2,24 @@ import {
   ApolloClient,
   InMemoryCache,
   NormalizedCacheObject,
-} from '@apollo/client';
-import { HttpLink } from '@apollo/client/link/http';
-import { SchemaLink } from '@apollo/client/link/schema';
-import merge from 'deepmerge';
-import { useMemo } from 'react';
-import { schema } from './schema';
+} from "@apollo/client";
+import { HttpLink } from "@apollo/client/link/http";
+import { SchemaLink } from "@apollo/client/link/schema";
+import merge from "deepmerge";
+import { useMemo } from "react";
+import { schema } from "./schema";
 
-export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE__';
+export const APOLLO_STATE_PROP_NAME = "__APOLLO_STATE__";
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | undefined;
 
 function createIsomorphLink() {
-  if (typeof window === 'undefined') {
+  if (typeof window === "undefined") {
     return new SchemaLink({ schema });
   } else {
     return new HttpLink({
-      uri: '/api/graphql',
-      credentials: 'same-origin',
+      uri: "/api/graphql",
+      credentials: "same-origin",
     });
   }
 }
@@ -27,17 +27,17 @@ function createIsomorphLink() {
 const cache = new InMemoryCache({
   typePolicies: {
     Properties: {
-      keyFields: ['props', ['zpid']],
+      keyFields: ["props", ["zpid"]],
     },
     Property: {
-      keyFields: ['property', ['zpid']],
+      keyFields: ["property", ["zpid"]],
     },
   },
 });
 
 function createApolloClient() {
   return new ApolloClient({
-    ssrMode: typeof window === 'undefined',
+    ssrMode: typeof window === "undefined",
     link: createIsomorphLink(),
     cache,
     connectToDevTools: true,
@@ -62,7 +62,7 @@ export function initializeApollo(
     _apolloClient.cache.restore(data);
   }
   // For SSG and SSR always create a new Apollo Client
-  if (typeof window === 'undefined') return _apolloClient;
+  if (typeof window === "undefined") return _apolloClient;
   // Create the Apollo Client once in the client
   if (!apolloClient) apolloClient = _apolloClient;
 

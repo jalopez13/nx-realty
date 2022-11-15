@@ -1,4 +1,4 @@
-query properties($params: PropertiesParams) {
+query Properties($params: PropertiesParams) {
   properties(params: $params) {
     props {
       bathrooms

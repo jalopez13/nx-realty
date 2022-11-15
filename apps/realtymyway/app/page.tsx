@@ -1,8 +1,9 @@
-import { Hero } from "@nx-realty/shared/ui";
+import { Hero } from "./components/hero";
+import PropertyMosaic from "./components/property-mosaic";
 
 const HomePage = () => {
   return (
-    <>
+    <div style={{ minHeight: "calc(100vh - 238px)" }}>
       <Hero
         image="/assets/images/homes.jpg"
         imageAlt="Home Image"
@@ -10,7 +11,9 @@ const HomePage = () => {
         subTitle="Search homes for sell in your neaighborhood and see how
         easy it is with "
       />
-    </>
+
+      <PropertyMosaic />
+    </div>
   );
 };
 

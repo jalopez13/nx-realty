@@ -1,4 +1,4 @@
-query properties_by_location($q: String!) {
+query PropertiesByLocation($q: String!) {
   properties_by_location(q: $q) {
     resultType
     results {

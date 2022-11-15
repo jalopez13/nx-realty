@@ -92,6 +92,6 @@
     }
   },
   "tags": [
-    "scope:app"
+    "type:app"
   ]
 }

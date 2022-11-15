@@ -1,14 +1,14 @@
-import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
-import { ApolloServer } from 'apollo-server-micro';
-import Cors from 'micro-cors';
-import { schema } from '../../graphql/schema';
+import { ApolloServerPluginLandingPageLocalDefault } from "apollo-server-core";
+import { ApolloServer } from "apollo-server-micro";
+import Cors from "micro-cors";
+import { schema } from "../../graphql/schema";
 
 const cors = Cors();
 
 const server = new ApolloServer({
   schema,
   csrfPrevention: true,
-  cache: 'bounded',
+  cache: "bounded",
   introspection: true,
   plugins: [ApolloServerPluginLandingPageLocalDefault({ embed: true })],
 });
@@ -22,11 +22,11 @@ export const config = {
 const startServer = server.start();
 
 export default cors(async function handler(req, res) {
-  if (req.method === 'OPTIONS') {
+  if (req.method === "OPTIONS") {
     res.end();
     return false;
   }
 
   await startServer;
-  await server.createHandler({ path: '/api/graphql' })(req, res);
+  await server.createHandler({ path: "/api/graphql" })(req, res);
 });

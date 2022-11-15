@@ -41,17 +41,17 @@
         "{workspaceRoot}/.eslintrc.json"
       ]
     },
+    "e2e": {
+      "inputs": [
+        "default",
+        "^production"
+      ]
+    },
     "build-storybook": {
       "inputs": [
         "default",
         "^production",
         "{workspaceRoot}/.storybook/**/*"
-      ]
-    },
-    "e2e": {
-      "inputs": [
-        "default",
-        "^production"
       ]
     }
   },
@@ -83,6 +83,7 @@
       "!{projectRoot}/tsconfig.spec.json",
       "!{projectRoot}/jest.config.[jt]s",
       "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
       "!{projectRoot}/.storybook/**/*",
       "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)"
     ]
